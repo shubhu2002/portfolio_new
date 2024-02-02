@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 500;
+  background: linear-gradient();
+  background: linear-gradient(
+    129.62deg,
+    #01020d 35.39%,
+    #000113 61.07%,
+    #000000 91.41%
+  ) !important;
+  background: black;
+  color: #fff;
+}
+
+/* Navbar CSS */
+.linkButton {
+  padding: 5px 15px;
+  border-radius: 7px;
+  transition: background ease-in-out 300ms;
+}
+
+.linkButton:hover {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(50px);
+}
+
+.btn {
+  display: flex;
+  background-color: #42e621;
+  padding: 12px 24px;
+  border-radius: 12px;
+  z-index: 40;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(255, 255, 255) !important;
+  width: 10%;
+  height: 25%;
+  border-radius: 50%;
+  z-index: -1;
+  top: 35%;
+  left: 45%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+.ripple:hover::before {
+  -webkit-transform: scale(15);
+  transform: scale(15);
+  -webkit-transition:
+    border-radius 0.5s 0.5s,
+    -webkit-transform 0.5s;
+  transition:
+    border-radius 0.5s 0.5s,
+    -webkit-transform 0.5s;
+  transition:
+    transform 0.5s,
+    border-radius 0.5s 0.5s;
+  transition:
+    transform 0.5s,
+    border-radius 0.5s 0.5s,
+    -webkit-transform 0.5s;
+}
+
+.ripple:hover::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.gradientBg {
+  width: 20vw;
+  height: 20vh;
+  background: #42e621;
+  border-radius: 100%;
+  filter: blur(80px);
+  position: absolute;
+  z-index: -999;
+}
+
+@media screen and (max-width: 600px) {
+  .gradientBg {
+    width: 25vw;
+    height: 25vh;
+    filter: blur(50px);
+  }
+}
+
+.gradientBg2 {
+  width: 20vw;
+  height: 20vh;
+  background: #6b1cdd;
+  border-radius: 100%;
+  filter: blur(80px);
+  position: absolute;
+  z-index: -999;
+}
+
+@media screen and (max-width: 600px) {
+  .gradientBg2 {
+    width: 25vw;
+    height: 25vh;
+    filter: blur(50px);
+  }
+}
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  border-radius: 0.5rem;
+  height: 0.2rem;
+  width: 0.2rem;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  height: 0rem;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    129.62deg,
+    #01020d 35.39%,
+    #000113 61.07%,
+    #000000 91.41%
+  );
+  /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: #5f4dff;
+  border: 2px solid #5f4dff;
+  /* creates padding around scroll thumb */
+}
+
