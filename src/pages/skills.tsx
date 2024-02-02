@@ -78,7 +78,7 @@ const skills: NextPage = () => {
           {imgData
             .filter((img) => img.id <= 9)
             .map((img) => (
-              <div className="h-[60px] w-[60px] md:h-[100px] md:w-[100px]">
+              <div className="h-[60px] w-[60px] md:h-[100px] md:w-[100px]" key={img.id}>
                 <Image
                   src={img.src}
                   alt={img.name}
@@ -100,7 +100,7 @@ const skills: NextPage = () => {
           {imgData
             .filter((img) => img.id > 9)
             .map((img) => (
-              <div className="h-[60px] w-[60px] md:h-[100px] md:w-[100px]  ">
+              <div className="h-[60px] w-[60px] md:h-[100px] md:w-[100px]  " key={img.id}>
                 <Image
                   src={img.src}
                   alt={img.name}

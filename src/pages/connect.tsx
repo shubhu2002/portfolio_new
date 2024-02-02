@@ -33,7 +33,7 @@ const connect: NextPage = () => {
             Ready To Get In Touch <span className="text-orange-400">?</span>{" "}
           </h1>
           <h1 className="py-2 text-4xl md:text-5xl">
-            Let's Connect <span className="text-6xl text-orange-400">.</span>
+            Let&#39;s Connect <span className="text-6xl text-orange-400">.</span>
           </h1>
         </motion.div>
         <motion.div
