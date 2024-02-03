@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { projects } from "~/data/config";
 import { motion } from "framer-motion";
@@ -46,16 +47,18 @@ const MyWorks: NextPage = () => {
             key={project.id}
             className=" flex w-full cursor-pointer flex-col items-center"
           >
-            <div className="h-[200px] w-[300px] overflow-hidden rounded-3xl md:h-[350px] md:w-[550px]">
-              <motion.img
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              className="h-[200px] w-[300px] overflow-hidden rounded-3xl md:h-[350px] md:w-[550px]"
+            >
+              <Image
                 src={project.src}
-                alt="img"
+                alt="projectImage"
                 width={1000}
                 height={1000}
                 className="h-full w-full object-fill "
-                whileHover={{ scale: 1.1 }}
               />
-            </div>
+            </motion.div>
 
             <motion.div
               whileHover={{ scale: 1 }}

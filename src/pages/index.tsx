@@ -26,17 +26,15 @@ export default function Home() {
       </Head>
 
       {/* side Image */}
-      <motion.img
+      <motion.div
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.4 }}
         viewport={{ once: true }}
-        src={`/b3.png`}
-        alt="sideBanner"
-        width={350}
-        height={500}
-        className="absolute right-6 top-0 -z-40 block h-[180px] w-[130px] md:h-[500px] md:w-[350px] "
-      />
+        className=" absolute right-6 top-0 -z-40 block h-[180px] w-[130px] md:h-[500px] md:w-[350px]"
+      >
+        <Image src={`/b3.png`} alt="sideBanner" width={350} height={500} />
+      </motion.div>
 
       <main className="relative mt-5 flex flex-col gap-4 px-6 md:px-16  ">
         {/* greet heading */}
@@ -106,16 +104,14 @@ export default function Home() {
             </p>
             <p className=" mt-1 text-lg">as Full Stack Developer Intern</p>
           </motion.div>
-          <motion.img
+          <motion.div
             transition={{ duration: 0.8 }}
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            src={`/nucast.jpg`}
-            alt="nucast"
-            height={150}
-            width={150}
-          />
+          >
+            <Image src={`/nucast.jpg`} alt="nucast" height={150} width={150} />
+          </motion.div>
         </div>
 
         <div className="mx-auto mt-5 h-[1px] w-full bg-white/15 md:mt-10" />
@@ -131,16 +127,18 @@ export default function Home() {
               key={project.id}
               className=" flex w-full cursor-pointer flex-col items-center"
             >
-              <div className="h-[200px] w-[300px] overflow-hidden rounded-3xl md:h-[350px] md:w-[550px]">
-                <motion.img
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="h-[200px] w-[300px] overflow-hidden rounded-3xl md:h-[350px] md:w-[550px]"
+              >
+                <Image
                   src={project.src}
-                  alt="img"
+                  alt="projectImg"
                   width={1000}
                   height={1000}
                   className=" h-full w-full object-fill "
-                  whileHover={{ scale: 1.1 }}
                 />
-              </div>
+              </motion.div>
               <motion.div
                 whileHover={{ scale: 1 }}
                 initial={{ scale: 0.9 }}

@@ -1,8 +1,8 @@
 import { type AppType } from "next/dist/shared/lib/utils";
-import Navbar from "~/Components/Navbar";
 import {Comfortaa} from 'next/font/google'
-
 import "~/styles/globals.css";
+
+import Navbar from "~/Components/Navbar";
 import Footer from "~/Components/Footer";
 
 const comfortaa = Comfortaa({subsets:["latin"]});

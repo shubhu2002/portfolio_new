@@ -2,6 +2,7 @@ import { LuMoveUpRight } from "react-icons/lu";
 import { NextPage } from "next";
 import { motion } from "framer-motion";
 import { contacts } from "~/data/config";
+import Image from "next/image";
 
 const connect: NextPage = () => {
   const animations: {
@@ -74,17 +75,16 @@ const connect: NextPage = () => {
           ))}
         </motion.div>
       </div>
-      <div>
-        <motion.img
-          transition={{ duration: 0.8 }}
+      <motion.div transition={{ duration: 0.8 }}
           initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}>
+        <Image
           src="/sidetr.png"
           alt="img"
           width={600}
           height={600}
-        ></motion.img>
-      </div>
+        ></Image>
+      </motion.div>
     </section>
   );
 };
