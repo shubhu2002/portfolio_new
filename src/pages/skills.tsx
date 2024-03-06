@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { NextPage } from "next";
 import Image from "next/image";
 import { imgData } from "~/data/config";
+import Marquee from "react-fast-marquee";
 
 const skills: NextPage = () => {
   const animations = {
@@ -68,17 +69,20 @@ const skills: NextPage = () => {
       </motion.div>
       <div className="mx-auto my-6 h-[1px] w-[90%] bg-white/15 md:my-12" />
 
-      <div className="hide-scroll gap-16 overflow-x-scroll px-6 py-10 md:gap-28 md:px-16 md:py-16">
-        <motion.div
-          transition={{ duration: 8, repeat: Infinity }}
-          initial={{ x: -500 }}
-          animate={{ x: [0, -700, 0] }}
-          className="grid grid-flow-col grid-rows-1 items-center gap-10 md:gap-32 "
-        >
+      <Marquee
+        speed={150}
+        gradient
+        gradientColor="#01020d 20%"
+        direction="right"
+      >
+        <div className="hide-scroll grid grid-flow-col justify-between gap-10 overflow-x-scroll px-6 py-10 md:gap-28 md:px-12 md:py-16">
           {imgData
             .filter((img) => img.id <= 9)
             .map((img) => (
-              <div className="h-[60px] w-[60px] md:h-[100px] md:w-[100px]" key={img.id}>
+              <div
+                className="h-[60px] w-[60px] md:h-[100px] md:w-[100px]"
+                key={img.id}
+              >
                 <Image
                   src={img.src}
                   alt={img.name}
@@ -88,19 +92,18 @@ const skills: NextPage = () => {
                 />
               </div>
             ))}
-        </motion.div>
-      </div>
-      <motion.div className="hide-scroll gap-16 overflow-x-scroll px-6 py-10 md:gap-28 md:px-16 md:py-16">
-        <motion.div
-          transition={{ duration: 8, repeat: Infinity }}
-          initial={{ x: 500 }}
-          animate={{ x: [-500, 0, -500] }}
-          className="grid grid-flow-col grid-rows-1 items-center gap-10 md:gap-32 "
-        >
+        </div>
+      </Marquee>
+
+      <Marquee speed={150} gradient gradientColor="#01020d 20%">
+        <div className="hide-scroll grid grid-flow-col justify-between gap-10 overflow-x-scroll px-6 py-10 md:gap-28 md:px-12 md:py-16">
           {imgData
             .filter((img) => img.id > 9)
             .map((img) => (
-              <div className="h-[60px] w-[60px] md:h-[100px] md:w-[100px]  " key={img.id}>
+              <div
+                className="h-[60px] w-[60px] md:h-[100px] md:w-[100px]  "
+                key={img.id}
+              >
                 <Image
                   src={img.src}
                   alt={img.name}
@@ -111,8 +114,8 @@ const skills: NextPage = () => {
                 />
               </div>
             ))}
-        </motion.div>
-      </motion.div>
+        </div>
+      </Marquee>
     </section>
   );
 };
