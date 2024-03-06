@@ -56,10 +56,8 @@ const skills: NextPage = () => {
           <li>Supabase</li>
           <li>Mongo DB</li>
           <li>MySQL</li>
-          <li>Docker</li>
         </ul>
         <ul className="flex list-disc flex-col gap-6">
-          <li>Web3</li>
           <li>Redux</li>
           <li>Git / Github</li>
           <li>Vercel</li>
