@@ -36,7 +36,7 @@ const ProjectModal: React.FC = () => {
         {projects
           .filter((project) => project.id === activeProjectId)
           .map((pr) => (
-            <div className="relative h-[85vh] w-[90vw] rounded-xl border border-white/5 bg-black/85 p-3 md:w-[80vw] md:p-6 ">
+            <div className="relative h-[85vh] w-[90vw] rounded-xl border border-white/5 bg-black/85 p-3 md:w-[80vw] md:p-6 " key={pr.id}>
               <div className=" flex h-full w-full flex-col overflow-y-scroll px-2 ">
                 <div className="mb-2 flex w-full justify-between">
                   <div className="inline-flex gap-6">
@@ -76,20 +76,21 @@ const ProjectModal: React.FC = () => {
                 </div>
 
                 <div className="mb-6 flex w-full flex-wrap gap-3 md:mb-10">
-                  {pr.stacks.map((st) => (
-                    <span className="rounded-3xl bg-gray-500/15 px-4 py-2.5 tracking-wider">
+                  {pr.stacks.map((st,index:number) => (
+                    <span className="rounded-3xl bg-gray-500/15 px-4 py-2.5 tracking-wider"key={index}>
                       {st}
                     </span>
                   ))}
                 </div>
                 <div className="mb-6 grid w-full grid-flow-row justify-center gap-5 md:mb-10 md:grid-cols-2  ">
-                  {pr.images.map((img) => (
+                  {pr.images.map((img,index:number) => (
                     <Image
                       src={img}
                       alt="img"
                       width={1000}
                       height={1000}
                       className=" w-[1000px] rounded-xl border border-white/5 md:h-[300px] "
+                      key={index}
                     />
                   ))}
                 </div>

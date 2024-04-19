@@ -1,4 +1,4 @@
-import { Comfortaa, Inter } from "next/font/google";
+import { Comfortaa } from "next/font/google";
 import Head from "next/head";
 import Footer from "~/components/footer";
 import Navbar from "~/components/navbar";
