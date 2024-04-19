@@ -1,8 +1,8 @@
 import { Comfortaa } from "next/font/google";
 import Head from "next/head";
-import Footer from "~/components/footer";
-import Navbar from "~/components/navbar";
-import ProjectModal from "~/components/project-modal";
+import Footer from "~/component/footer";
+import Navbar from "~/component/navbar";
+import ProjectModal from "~/component/project-modal";
 import { useAppStore } from "~/store";
 
 const comfortaa_font = Comfortaa({

@@ -1,4 +1,4 @@
-import MyWorks from "~/components/work";
+import MyWorks from "~/component/work";
 import Layout from "~/layout";
 
 export default function Home() {
