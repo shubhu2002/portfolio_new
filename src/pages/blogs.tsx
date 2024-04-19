@@ -1,4 +1,4 @@
-import Blogs from "~/component/blogs";
+import Blogs from "~/components/blogs";
 import Layout from "~/layout";
 
 export default function BlogPage() {
