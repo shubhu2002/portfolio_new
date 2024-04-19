@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('custom-scrollbar.css');
+
 body {
   margin: 0;
   padding: 0;
@@ -124,41 +126,3 @@ body {
     filter: blur(50px);
   }
 }
-.hide-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-.hide-scroll {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  border-radius: 0.5rem;
-  height: 0.2rem;
-  width: 0.2rem;
-}
-
-.custom-scroll::-webkit-scrollbar {
-  height: 0rem;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 0.5rem;
-  background: linear-gradient(
-    129.62deg,
-    #01020d 35.39%,
-    #000113 61.07%,
-    #000000 91.41%
-  );
-  /* color of the tracking area */
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 0.5rem;
-  background-color: #5f4dff;
-  border: 2px solid #5f4dff;
-  /* creates padding around scroll thumb */
-}
-
