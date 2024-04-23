@@ -36,8 +36,8 @@ const ProjectModal: React.FC = () => {
         {projects
           .filter((project) => project.id === activeProjectId)
           .map((pr) => (
-            <div className="relative h-[85vh] w-[90vw] rounded-xl border border-white/5 bg-black/85 p-3 md:w-[80vw] md:p-6 " key={pr.id}>
-              <div className=" flex h-full w-full flex-col overflow-y-scroll px-2 ">
+            <div className="relative h-[85vh] w-[90vw] rounded-xl border border-white/5 bg-black/85 p-3 md:w-[80vw] md:p-6 " key={pr.id} >
+              <div className=" flex h-full w-full flex-col overflow-y-scroll px-2 " data-lenis-prevent>
                 <div className="mb-2 flex w-full justify-between">
                   <div className="inline-flex gap-6">
                     <button

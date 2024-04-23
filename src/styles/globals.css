@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url('custom-scrollbar.css');
+@import url('lenis-scroll.css');
 
 body {
   margin: 0;
