@@ -51,9 +51,9 @@ const Footer: React.FC = () => {
           <li>
             <Link href="/works">Work</Link>
           </li>
-          <li>
+{/*           <li>
             <Link href="/blogs">Blog</Link>
-          </li>
+          </li> */}
           <li>
             <Link href="/connect">Connect</Link>
           </li>
