@@ -1,12 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-import { projects } from "~/data/config";
 import { motion } from "framer-motion";
 import { useAppStore } from "~/store";
+import ReactPlayer from "react-player";
+import { useState } from "react";
 
 const MyWorks: React.FC = () => {
-  const { toggleProjectModal } = useAppStore();
+  const { toggleProjectModal, myProjects } = useAppStore();
+  const [category, setCategory] = useState<{ txt: string; activeId: number }>({
+    txt: "all",
+    activeId: 1,
+  });
   const animations = {
     variants: {
       visible: { x: 0, opacity: 1 },
@@ -19,6 +24,7 @@ const MyWorks: React.FC = () => {
   const handleClick = (ProjectId: number) => {
     toggleProjectModal(true, ProjectId);
   };
+
   return (
     <section className="mb-12 w-full px-6 md:px-16 ">
       <motion.div
@@ -43,43 +49,88 @@ const MyWorks: React.FC = () => {
         </p>
       </motion.div>
 
-      <div className="my-3 mt-12 grid w-full justify-items-center gap-y-10 md:my-6 md:mt-24 md:grid-cols-2 md:grid-rows-3 md:gap-20">
-        {projects.map((project) => (
-          <motion.div
-            transition={{ duration: 0.8 }}
-            {...animations}
-            key={project.id}
-            className=" flex w-full cursor-pointer flex-col items-center"
-          >
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              className="h-[200px] w-[300px] overflow-hidden rounded-3xl md:h-[350px] md:w-[550px]"
-              onClick={() => handleClick(project.id)}
+      <div className="my-3 mt-12 md:my-6 md:mt-24">
+        <div className="flex w-full flex-col items-center gap-6 bg-black py-6">
+          <div className="flex items-center gap-2 rounded-[40px] bg-white/10 p-4 md:gap-4">
+            <span
+              className={`w-auto cursor-pointer rounded-3xl ${category.activeId === 1 ? "bg-purple-600" : ""} px-7 py-3 text-center text-[16px] transition-all duration-300 md:px-12`}
+              onClick={() => setCategory({ txt: "all", activeId: 1 })}
             >
-              <Image
-                src={project.src}
-                alt="projectImage"
-                width={1000}
-                height={1000}
-                className="h-full w-full object-fill "
-              />
-            </motion.div>
+              All
+            </span>
+            <span
+              className={`w-auto cursor-pointer rounded-3xl ${category.activeId === 2 ? "bg-purple-600" : ""} px-4 py-3 text-center text-[16px] transition-all duration-300`}
+              onClick={() => setCategory({ txt: "nucast", activeId: 2 })}
+            >
+              Nucast Pte.Ltd.
+            </span>
+            <span
+              className={`w-auto cursor-pointer rounded-3xl ${category.activeId === 3 ? "bg-purple-600" : ""} px-4 py-3 text-center text-[16px] transition-all duration-300`}
+              onClick={() => setCategory({ txt: "personal", activeId: 3 })}
+            >
+              Personal
+            </span>
+          </div>
 
-            <motion.div
-              whileHover={{ scale: 1 }}
-              initial={{ scale: 0.9 }}
-              className="mt-4 "
-            >
-              <Link
-                href={project.link}
-                className="inline-flex w-full items-center justify-start gap-3"
-              >
-                <MdOutlineKeyboardDoubleArrowRight />
-                <h2 className="text-lg md:text-2xl">{project.heading}</h2>
-              </Link>
-            </motion.div>
-          </motion.div>
-        ))}
+          <div className="mt-8 grid w-full justify-items-center gap-y-10 md:grid-cols-2 md:grid-rows-3 md:gap-y-16">
+            {myProjects
+              ?.filter(
+                (c) => c.category && c.category.includes(`${category.txt}`),
+              )
+              .map((project) => (
+                <motion.div
+                  transition={{ duration: 0.8 }}
+                  {...animations}
+                  key={project.id}
+                  className=" flex w-full cursor-pointer flex-col items-center"
+                >
+                  <motion.div
+                    whileHover={{ scale: 1 }}
+                    className="h-[90%] w-[90%] overflow-hidden rounded-3xl border border-gray-400/40"
+                    onClick={() => handleClick(project.id)}
+                  >
+                    {project.src.includes("mkv") ? (
+                      <motion.div whileHover={{ scale: 1.15 }}>
+                        <ReactPlayer
+                          url={project.src}
+                          width={`100%`}
+                          height={`100%`}
+                          controls={false}
+                          playing={true}
+                          loop={true}
+                          muted={true}
+                        />
+                      </motion.div>
+                    ) : (
+                      <>
+                        <Image
+                          src={project.src}
+                          alt="projectImage"
+                          width={1000}
+                          height={1000}
+                          className="h-full w-full object-fill "
+                        />
+                      </>
+                    )}
+                  </motion.div>
+
+                  <motion.div
+                    whileHover={{ scale: 1, color: "#6b1cdd" }}
+                    initial={{ scale: 0.9 }}
+                    className="mt-4 "
+                  >
+                    <Link
+                      href={project.link ?? ""}
+                      className="inline-flex w-full items-center justify-start gap-3"
+                    >
+                      <MdOutlineKeyboardDoubleArrowRight />
+                      <h2 className="text-lg md:text-2xl">{project.heading}</h2>
+                    </Link>
+                  </motion.div>
+                </motion.div>
+              ))}
+          </div>
+        </div>
       </div>
     </section>
   );

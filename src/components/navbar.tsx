@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
           <Link href="/works" className="linkButton">
             Work
           </Link>
-{/*           <Link href="/blogs" className="linkButton">
+          {/*           <Link href="/blogs" className="linkButton">
             Blogs
           </Link> */}
           <Link href="/connect" className="linkButton">
@@ -76,9 +76,9 @@ const Navbar: React.FC = () => {
         <Link href="/works" className="linkButton">
           Work
         </Link>
-        <Link href="/blogs" className="linkButton">
+        {/* <Link href="/blogs" className="linkButton">
           Blogs
-        </Link>
+        </Link> */}
         <Link href="/connect" className="linkButton">
           Connect
         </Link>

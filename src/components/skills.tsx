@@ -17,11 +17,12 @@ const Skills: React.FC = () => {
   return (
     <section className="w-full  ">
       <motion.div
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.5 }}
         {...animations}
-        className="my-6 px-6 md:px-16"
+        className="relative my-6 flex w-full items-end justify-center"
       >
-        <h1 className=" text-center text-7xl">Skills</h1>
+        <h1 className="text-center text-5xl md:text-7xl">Skills</h1>
+        <span className="text-6xl text-orange-500 md:text-8xl ">.</span>
       </motion.div>
 
       <motion.div
@@ -53,11 +54,14 @@ const Skills: React.FC = () => {
           <li>Express JS</li>
           <li>Node JS</li>
           <li>Supabase</li>
+          <li>Appwrite</li>
           <li>Mongo DB</li>
           <li>MySQL</li>
         </ul>
         <ul className="flex list-disc flex-col gap-6">
+          <li>Zustand</li>
           <li>Redux</li>
+          <li>Mesh JS</li>
           <li>Git / Github</li>
           <li>Vercel</li>
           <li>C++</li>

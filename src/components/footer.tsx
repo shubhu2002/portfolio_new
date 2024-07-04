@@ -1,13 +1,13 @@
 import Link from "next/link";
-import { FaArrowUp } from "react-icons/fa6";
+// import { FaArrowUp } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
 const Footer: React.FC = () => {
-  const isBrowser = () => typeof window !== "undefined";
-  function handleClick() {
-    if (!isBrowser()) return;
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+  // const isBrowser = () => typeof window !== "undefined";
+  // function handleClick() {
+  //   if (!isBrowser()) return;
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // }
 
   const animations = {
     variants: {
@@ -27,13 +27,13 @@ const Footer: React.FC = () => {
   return (
     <motion.footer
       {...animations}
-      className="bottom-0 flex items-center justify-around px-6 py-10  md:px-16"
+      className="bottom-0 flex items-start justify-around px-6 py-10  md:px-16"
     >
       <div className="grid gap-0 md:gap-2">
         <h1 className="text-xl md:text-4xl">Connect & </h1>
         <h1 className="text-xl md:text-4xl">Develop With Me</h1>
         <span className="text-lg md:text-xl">Shubhanshu Saxena</span>
-        <div className="relative">
+        {/* <div className="relative">
           <button
             className="btn ripple rounded-!full mt-4 items-center gap-1 border transition-[background] duration-500 "
             onClick={handleClick}
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
             Scroll
             <FaArrowUp size={20} />
           </button>
-        </div>
+        </div> */}
       </div>
       <div className="scale-[0.9] md:scale-100">
         <ul className="grid gap-2">

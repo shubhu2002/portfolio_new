@@ -1,11 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { projects } from "~/data/config";
 import { motion } from "framer-motion";
+import ReactPlayer from "react-player";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { LuMoveUpRight } from "react-icons/lu";
 
-const HomePage:React.FC = () => {
+import { useAppStore } from "~/store";
+
+const HomePage: React.FC = () => {
+  const { myProjects } = useAppStore();
   const animations = {
     variants: {
       visible: { y: 0, opacity: 1 },
@@ -62,13 +65,10 @@ const HomePage:React.FC = () => {
             style={{ width: "20vw", height: "20vh" }}
           />
 
-          {/* <div className="gradientBg2 -left-6 -top-8" /> */}
           <h1 className="text-4xl md:text-5xl">Creative</h1>
           <h1 className="text-5xl md:text-6xl">
             Software Developer <span className="text-orange-400">.</span>
           </h1>
-          {/* <div className="gradientBg left-52" /> */}
-          {/* <div className="gradientBg2  left-[450px]" /> */}
         </motion.div>
 
         {/* resume link */}
@@ -110,43 +110,61 @@ const HomePage:React.FC = () => {
         <div className="mx-auto mt-5 h-[1px] w-full bg-white/15 md:mt-10" />
 
         {/* projects */}
-        <div className="my-3 grid w-full justify-items-center gap-6 md:my-6 md:grid-flow-col ">
-          {projects.slice(0, 2).map((project) => (
-            <motion.div
-              transition={{ duration: 0.8 }}
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              key={project.id}
-              className=" flex w-full cursor-pointer flex-col items-center"
-            >
+        <div className="my-3 grid w-full grid-cols-1 justify-items-center gap-6 md:my-6 md:grid-flow-row md:grid-cols-2 ">
+          {myProjects
+            ?.filter((p) => [6, 7, 8, 13].includes(p.id))
+            .map((project) => (
               <motion.div
-                whileHover={{ scale: 1.1 }}
-                className="h-[200px] w-[300px] overflow-hidden rounded-3xl md:h-[350px] md:w-[550px]"
+                transition={{ duration: 0.8 }}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                key={project.id}
+                className=" flex w-full cursor-pointer flex-col items-center"
               >
-                <Image
-                  src={project.src}
-                  alt="projectImg"
-                  width={1000}
-                  height={1000}
-                  className=" h-full w-full object-fill "
-                />
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1 }}
-                initial={{ scale: 0.9 }}
-                className="mt-4 "
-              >
-                <Link
-                  href={project.link}
-                  className="inline-flex w-full items-center justify-start gap-3"
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  className="h-[90%] w-[90%] overflow-hidden rounded-3xl border border-gray-400/40"
                 >
-                  <MdOutlineKeyboardDoubleArrowRight />
-                  <h2 className=" text-lg md:text-2xl">{project.heading}</h2>
-                </Link>
+                  {project.src.includes("mkv") ? (
+                    <>
+                      <ReactPlayer
+                        url={project.src}
+                        width={`100%`}
+                        height={`100%`}
+                        controls={false}
+                        playing={true}
+                        loop={true}
+                        muted={true}
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <Image
+                        src={project.src}
+                        alt="projectImage"
+                        width={1000}
+                        height={1000}
+                        className="h-full w-full object-fill "
+                      />
+                    </>
+                  )}
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1 }}
+                  initial={{ scale: 0.9 }}
+                  className="mt-4 "
+                >
+                  <Link
+                    href={project.link ?? ""}
+                    className="inline-flex w-full items-center justify-start gap-3"
+                  >
+                    <MdOutlineKeyboardDoubleArrowRight />
+                    <h2 className=" text-lg md:text-2xl">{project.heading}</h2>
+                  </Link>
+                </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
+            ))}
         </div>
         <div className="relative my-3 flex w-full justify-center md:my-6">
           <Link
