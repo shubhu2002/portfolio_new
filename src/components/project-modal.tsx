@@ -43,7 +43,7 @@ const ProjectModal: React.FC = () => {
           ?.filter((project) => project.id === activeProjectId)
           ?.map((pr) => (
             <div
-              className="relative h-[85vh] w-[90vw] rounded-xl border border-white/5 bg-black/85 p-3 md:w-[700px] md:p-6 "
+              className="relative h-auto w-[90vw] rounded-xl border border-white/5 bg-black/85 p-3 md:h-[85vh] md:w-[700px] md:p-6 "
               key={pr.id}
             >
               <div
@@ -74,8 +74,8 @@ const ProjectModal: React.FC = () => {
                     <RxCrossCircled size={42} />
                   </button>
                 </div>
-                <div className="mb-6 flex justify-center w-full md:mb-10 ">
-                  <span className="w-full max-w-[95%] text-[7vw] md:text-[2.5vw] text-center">
+                <div className="mb-6 flex w-full justify-center md:mb-10 ">
+                  <span className="w-full max-w-[95%] text-center text-[7vw] md:text-[2.5vw]">
                     {pr.heading}
                   </span>
                 </div>
@@ -91,7 +91,11 @@ const ProjectModal: React.FC = () => {
                       <IoIosLink />
                       Deploy Link :
                     </div>
-                    <Link href={pr.link ?? ""} className="text-orange-400 ">
+                    <Link
+                      href={pr.link ?? ""}
+                      target="_blank"
+                      className="text-orange-400 "
+                    >
                       {pr.link}
                     </Link>
                   </div>

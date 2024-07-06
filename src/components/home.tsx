@@ -110,7 +110,7 @@ const HomePage: React.FC = () => {
         <div className="mx-auto mt-5 h-[1px] w-full bg-white/15 md:mt-10" />
 
         {/* projects */}
-        <div className="my-3 grid w-full grid-cols-1 justify-items-center gap-6 md:my-6 md:grid-flow-row md:grid-cols-2 ">
+        <div className="my-3 grid w-full grid-cols-1 justify-items-center gap-6 md:my-6 md:grid-flow-row md:grid-cols-2 md:gap-y-10 ">
           {myProjects
             ?.filter((p) => [6, 7, 8, 13].includes(p.id))
             .map((project) => (
@@ -122,12 +122,9 @@ const HomePage: React.FC = () => {
                 key={project.id}
                 className=" flex w-full cursor-pointer flex-col items-center"
               >
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  className="h-[90%] w-[90%] overflow-hidden rounded-3xl border border-gray-400/40"
-                >
-                  {project.src.includes("mkv") ? (
-                    <>
+                <motion.div className="h-[90%] w-[90%] overflow-hidden rounded-3xl border border-gray-400/40">
+                  {project.src.includes("mp4") ? (
+                    <motion.div whileHover={{ scale: 1.15 }}>
                       <ReactPlayer
                         url={project.src}
                         width={`100%`}
@@ -136,8 +133,9 @@ const HomePage: React.FC = () => {
                         playing={true}
                         loop={true}
                         muted={true}
+                        playsinline={true}
                       />
-                    </>
+                    </motion.div>
                   ) : (
                     <>
                       <Image
@@ -151,7 +149,7 @@ const HomePage: React.FC = () => {
                   )}
                 </motion.div>
                 <motion.div
-                  whileHover={{ scale: 1 }}
+                  whileHover={{ scale: 1, color: "#6b1cdd" }}
                   initial={{ scale: 0.9 }}
                   className="mt-4 "
                 >

@@ -89,7 +89,7 @@ const MyWorks: React.FC = () => {
                     className="h-[90%] w-[90%] overflow-hidden rounded-3xl border border-gray-400/40"
                     onClick={() => handleClick(project.id)}
                   >
-                    {project.src.includes("mkv") ? (
+                    {project.src.includes("mp4") ? (
                       <motion.div whileHover={{ scale: 1.15 }}>
                         <ReactPlayer
                           url={project.src}
@@ -99,6 +99,7 @@ const MyWorks: React.FC = () => {
                           playing={true}
                           loop={true}
                           muted={true}
+                          playsinline={true}
                         />
                       </motion.div>
                     ) : (
