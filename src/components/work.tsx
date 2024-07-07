@@ -5,9 +5,11 @@ import { motion } from "framer-motion";
 import { useAppStore } from "~/store";
 import ReactPlayer from "react-player";
 import { useState } from "react";
+import { BiLoaderCircle } from "react-icons/bi";
 
 const MyWorks: React.FC = () => {
   const { toggleProjectModal, myProjects } = useAppStore();
+  const [loading, setLoading] = useState<boolean>(true);
   const [category, setCategory] = useState<{ txt: string; activeId: number }>({
     txt: "all",
     activeId: 1,
@@ -79,19 +81,29 @@ const MyWorks: React.FC = () => {
               )
               .map((project) => (
                 <motion.div
+                  key={project.id}
                   transition={{ duration: 0.8 }}
                   {...animations}
-                  key={project.id}
                   className=" flex w-full cursor-pointer flex-col items-center"
                 >
                   <motion.div
                     whileHover={{ scale: 1 }}
-                    className="h-[90%] w-[90%] overflow-hidden rounded-3xl border border-gray-400/40"
+                    className="relative h-[90%] w-[90%] overflow-hidden rounded-3xl border border-gray-400/40"
                     onClick={() => handleClick(project.id)}
                   >
                     {project.src.includes("mp4") ? (
                       <motion.div whileHover={{ scale: 1.15 }}>
+                        {loading && (
+                          <div className="absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center">
+                            <BiLoaderCircle
+                              className="animate-spin"
+                              color="#ffffff"
+                              size={22}
+                            />
+                          </div>
+                        )}
                         <ReactPlayer
+                          onReady={() => setLoading(false)}
                           url={project.src}
                           width={`100%`}
                           height={`100%`}
