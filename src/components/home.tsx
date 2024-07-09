@@ -112,7 +112,7 @@ const HomePage: React.FC = () => {
         {/* projects */}
         <div className="my-3 grid w-full grid-cols-1 justify-items-center gap-6 md:my-6 md:grid-flow-row md:grid-cols-2 md:gap-y-10 ">
           {myProjects
-            ?.filter((p) => [6, 7, 8, 13].includes(p.id))
+            ?.filter((p) => [6, 8, 9, 14].includes(p.id))
             .map((project) => (
               <motion.div
                 transition={{ duration: 0.8 }}

@@ -24,10 +24,12 @@ const ProjectModal: React.FC = () => {
       setActiveProjectId(activeProjectId - 1);
     }
   };
-
+  console.log();
   const nextProject = () => {
-    if (activeProjectId < 14) {
-      setActiveProjectId(activeProjectId + 1);
+    if (myProjects) {
+      if (activeProjectId < myProjects?.length) {
+        setActiveProjectId(activeProjectId + 1);
+      }
     }
   };
 
@@ -61,7 +63,9 @@ const ProjectModal: React.FC = () => {
                     </button>
                     <button
                       onClick={nextProject}
-                      disabled={activeProjectId >= 13}
+                      disabled={
+                        myProjects && activeProjectId >= myProjects?.length
+                      }
                       className="opacity-85 disabled:opacity-35"
                     >
                       <FaArrowRightLong size={26} />
