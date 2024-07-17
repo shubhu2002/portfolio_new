@@ -6,6 +6,7 @@ import { useAppStore } from "~/store";
 import ReactPlayer from "react-player";
 import { useState } from "react";
 import { BiLoaderCircle } from "react-icons/bi";
+import { FILTERS } from "~/data/config";
 
 const MyWorks: React.FC = () => {
   const { toggleProjectModal, myProjects } = useAppStore();
@@ -52,26 +53,26 @@ const MyWorks: React.FC = () => {
       </motion.div>
 
       <div className="my-3 mt-12 md:my-6 md:mt-24">
-        <div className="flex w-full flex-col items-center gap-6 bg-black py-6">
-          <div className="flex items-center gap-2 rounded-[40px] bg-white/10 p-4 md:gap-4">
-            <span
-              className={`w-auto cursor-pointer rounded-3xl ${category.activeId === 1 ? "bg-purple-600" : ""} px-7 py-3 text-center text-[16px] transition-all duration-300 md:px-12`}
-              onClick={() => setCategory({ txt: "all", activeId: 1 })}
-            >
-              All
-            </span>
-            <span
-              className={`w-auto cursor-pointer rounded-3xl ${category.activeId === 2 ? "bg-purple-600" : ""} px-4 py-3 text-center text-[16px] transition-all duration-300`}
-              onClick={() => setCategory({ txt: "nucast", activeId: 2 })}
-            >
-              Nucast Pte.Ltd.
-            </span>
-            <span
-              className={`w-auto cursor-pointer rounded-3xl ${category.activeId === 3 ? "bg-purple-600" : ""} px-4 py-3 text-center text-[16px] transition-all duration-300`}
-              onClick={() => setCategory({ txt: "personal", activeId: 3 })}
-            >
-              Personal
-            </span>
+        <div className="flex w-full flex-col items-center gap-6 bg-black px-4 py-6 md:px-0">
+          <div className="flex items-center gap-0 rounded-[40px] bg-white/10 p-2 md:gap-4 md:p-4">
+            {FILTERS.map((filter) => (
+              <span
+                key={filter.id}
+                className={`relative z-[1] w-auto cursor-pointer rounded-3xl ${category.activeId === filter.id ? "" : ""} px-4 py-3 text-center text-[16px] transition-all duration-300 ${filter.label === "All" ? "px-8" : ""}`}
+                onClick={() =>
+                  setCategory({ txt: filter.select, activeId: filter.id })
+                }
+              >
+                {filter.label}
+                {category.activeId === filter.id && (
+                  <motion.div
+                    className="absolute inset-0 z-[-1] rounded-full bg-purple-600"
+                    layoutId="activeOptionBackground"
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  />
+                )}
+              </span>
+            ))}
           </div>
 
           <div className="mt-8 grid w-full justify-items-center gap-y-10 md:grid-cols-2 md:grid-rows-3 md:gap-y-16">

@@ -124,3 +124,9 @@ export const imgData: ImageDataProps[] = [
     name: "VS Code",
   },
 ];
+
+export const FILTERS = [
+  { select: "all", label: "All", id: 1 },
+  { select: "nucast", label: "Nucast Pte.Ltd.", id: 2 },
+  { select: "personal", label: "Personal", id: 3 },
+];
