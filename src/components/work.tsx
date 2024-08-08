@@ -116,7 +116,7 @@ const MyWorks: React.FC = () => {
                         />
                       </motion.div>
                     ) : (
-                      <>
+                      <motion.div whileHover={{ scale: 1.15 }}>
                         <Image
                           src={project.src}
                           alt="projectImage"
@@ -124,7 +124,7 @@ const MyWorks: React.FC = () => {
                           height={1000}
                           className="h-full w-full object-fill "
                         />
-                      </>
+                      </motion.div>
                     )}
                   </motion.div>
 
