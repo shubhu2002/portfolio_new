@@ -76,6 +76,7 @@ const HomePage: React.FC = () => {
           <Link
             href="https://drive.google.com/file/d/17NRzDQRQSaYGKhcukEufsC8YWdpmGPpy/view?usp=sharing"
             className="btn ripple flex w-36 items-center gap-2 transition-[background] duration-500"
+            target="_blank"
           >
             Resume <LuMoveUpRight size={20} />
           </Link>
@@ -156,6 +157,7 @@ const HomePage: React.FC = () => {
                   <Link
                     href={project.link ?? ""}
                     className="inline-flex w-full items-center justify-start gap-3"
+                    target="_blank"
                   >
                     <MdOutlineKeyboardDoubleArrowRight />
                     <h2 className=" text-lg md:text-2xl">{project.heading}</h2>
