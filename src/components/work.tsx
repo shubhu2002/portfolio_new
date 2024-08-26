@@ -136,6 +136,7 @@ const MyWorks: React.FC = () => {
                     <Link
                       href={project.link ?? ""}
                       className="inline-flex w-full items-center justify-start gap-3"
+                      target="_blank"
                     >
                       <MdOutlineKeyboardDoubleArrowRight />
                       <h2 className="text-lg md:text-2xl">{project.heading}</h2>
