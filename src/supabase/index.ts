@@ -1,18 +1,13 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { ProjectProps } from "~/types";
-import db from "./config";
+import axios from "axios";
 
 export const getAllMyProjects = async (): Promise<ProjectProps[]> => {
   try {
-    const { data: my_projects, error } = await db
-      .from("my_projects")
-      .select("*")
-      .order("id", { ascending: false });
-    if (error) throw error;
-    return my_projects;
+    const { data: projectData } = await axios.get<{
+      data: ProjectProps[];
+      status: true;
+    }>("https://portfolio-new-backend-52be.onrender.com/api/v1/projects/all");
+    return projectData.data;
   } catch (error) {
     console.error("Error fetching projects:", error);
     throw error;
