@@ -79,7 +79,7 @@ const MyWorks: React.FC = () => {
             {myProjects
               ?.filter(
                 (c) => c.category && c.category.includes(`${category.txt}`),
-              )
+              ).reverse()
               .map((project) => (
                 <motion.div
                   key={project.id}
