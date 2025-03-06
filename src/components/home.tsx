@@ -74,7 +74,7 @@ const HomePage: React.FC = () => {
         {/* resume link */}
         <motion.div {...animations} transition={{ duration: 0.8 }}>
           <Link
-            href="https://drive.google.com/file/d/17NRzDQRQSaYGKhcukEufsC8YWdpmGPpy/view?usp=sharing"
+            href="https://drive.google.com/file/d/1aob5c30w7epk3-gYsDg5n7nGYdhgdgU4/view?usp=sharing"
             className="btn ripple flex w-36 items-center gap-2 transition-[background] duration-500"
             target="_blank"
           >
