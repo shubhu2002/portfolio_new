@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
 import { useQuery } from "@tanstack/react-query";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-import { LuMoveUpRight } from "react-icons/lu";
+import { LuLoader, LuMoveUpRight } from "react-icons/lu";
 
 import { ProjectProps } from "~/types";
 import { apiInstance, open_link } from "~/utils";
@@ -122,70 +122,80 @@ const HomePage: React.FC = () => {
         <div className="mx-auto mt-5 h-[1px] w-full bg-white/15 md:mt-10" />
 
         {/* projects */}
-        <div className="my-3 grid w-full grid-cols-1 justify-items-center gap-6 md:my-6 md:grid-flow-row md:grid-cols-2 md:gap-y-10 ">
-          {projectData
-            ?.filter((p) => [6, 8, 9, 14].includes(p.id))
-            .map((project) => (
-              <motion.div
-                transition={{ duration: 0.8 }}
-                initial={{ opacity: 0, x: -100 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                key={project.id}
-                onClick={() => open_link(project.link)}
-                className=" flex w-full cursor-pointer flex-col items-center"
-              >
-                <motion.div className="h-[90%] w-[90%] overflow-hidden rounded-3xl border border-gray-400/40">
-                  {project.src.includes("mp4") ? (
-                    <motion.div whileHover={{ scale: 1.15 }}>
-                      <ReactPlayer
-                        url={project.src}
-                        width={`100%`}
-                        height={`100%`}
-                        controls={false}
-                        playing={true}
-                        loop={true}
-                        muted={true}
-                        playsinline={true}
-                      />
-                    </motion.div>
-                  ) : (
-                    <>
-                      <Image
-                        src={project.src}
-                        alt="projectImage"
-                        width={1000}
-                        height={1000}
-                        className="h-full w-full object-fill "
-                      />
-                    </>
-                  )}
-                </motion.div>
+        {projectData ? (
+          <div className="my-3 grid w-full grid-cols-1 justify-items-center gap-6 md:my-6 md:grid-flow-row md:grid-cols-2 md:gap-y-10 ">
+            {projectData
+              .filter((p) => [6, 8, 9, 14].includes(p.id))
+              .map((project) => (
                 <motion.div
-                  whileHover={{ scale: 1, color: "#6b1cdd" }}
-                  initial={{ scale: 0.9 }}
-                  className="mt-4 "
+                  transition={{ duration: 0.8 }}
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  key={project.id}
+                  onClick={() => open_link(project.link)}
+                  className=" flex w-full cursor-pointer flex-col items-center"
                 >
-                  <Link
-                    href={project.link ?? ""}
-                    className="inline-flex w-full items-center justify-start gap-3"
-                    target="_blank"
+                  <motion.div className="h-[90%] w-[90%] overflow-hidden rounded-3xl border border-gray-400/40">
+                    {project.src.includes("mp4") ? (
+                      <motion.div whileHover={{ scale: 1.15 }}>
+                        <ReactPlayer
+                          url={project.src}
+                          width={`100%`}
+                          height={`100%`}
+                          controls={false}
+                          playing={true}
+                          loop={true}
+                          muted={true}
+                          playsinline={true}
+                        />
+                      </motion.div>
+                    ) : (
+                      <>
+                        <Image
+                          src={project.src}
+                          alt="projectImage"
+                          width={1000}
+                          height={1000}
+                          className="h-full w-full object-fill "
+                        />
+                      </>
+                    )}
+                  </motion.div>
+                  <motion.div
+                    whileHover={{ scale: 1, color: "#6b1cdd" }}
+                    initial={{ scale: 0.9 }}
+                    className="mt-4 "
                   >
-                    <MdOutlineKeyboardDoubleArrowRight />
-                    <h2 className=" text-lg md:text-2xl">{project.heading}</h2>
-                  </Link>
+                    <Link
+                      href={project.link ?? ""}
+                      className="inline-flex w-full items-center justify-start gap-3"
+                      target="_blank"
+                    >
+                      <MdOutlineKeyboardDoubleArrowRight />
+                      <h2 className=" text-lg md:text-2xl">
+                        {project.heading}
+                      </h2>
+                    </Link>
+                  </motion.div>
                 </motion.div>
-              </motion.div>
-            ))}
-        </div>
-        <div className="relative my-3 flex w-full justify-center md:my-6">
-          <Link
-            href={`/works`}
-            className="btn ripple border transition-[background] duration-500"
-          >
-            Explore More
-          </Link>
-        </div>
+              ))}
+          </div>
+        ) : (
+          <div className="flex w-full items-center justify-center">
+            <LuLoader size={32} className="my-32 animate-spin opacity-50" />
+          </div>
+        )}
+        {projectData && (
+          <div className="relative my-3 flex w-full justify-center md:my-6">
+            <Link
+              href={`/works`}
+              className="btn ripple border transition-[background] duration-500"
+            >
+              Explore More
+            </Link>
+          </div>
+        )}
         <motion.div transition={{ duration: 0.8 }} {...animations}>
           <p className="tex-xl w-full text-justify md:text-2xl">
             As an accomplished software engineer, I am a virtuoso using
