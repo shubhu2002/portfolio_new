@@ -1,7 +1,11 @@
-import { motion } from "framer-motion";
 import Image from "next/image";
-import { imgData } from "~/data/config";
+import { useQuery } from "@tanstack/react-query";
+import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
+
+import { imgData } from "~/data/config";
+import { SkillsProps } from "~/types";
+import { apiInstance } from "~/utils";
 
 const Skills: React.FC = () => {
   const animations = {
@@ -14,6 +18,15 @@ const Skills: React.FC = () => {
     viewport: { once: true },
   };
 
+  const { data: skillsData } = useQuery({
+    queryKey: ["mySkills"],
+    queryFn: async ({ signal }) =>
+      apiInstance
+        .get<{ success: boolean; data: SkillsProps[] }>("/skills/all", {
+          signal,
+        })
+        .then((res) => res.data.data),
+  });
   return (
     <section className="w-full  ">
       <motion.div
@@ -40,33 +53,41 @@ const Skills: React.FC = () => {
         <div className="gradientBg2 -left-2 top-1/2 -translate-y-1/2 md:left-12 md:top-0 md:translate-y-0" />
       </motion.div>
       <div className="mx-auto my-6 h-[1px] w-[90%] bg-white/15 md:my-12 " />
-      <motion.div className="my-12 flex w-full justify-evenly gap-10  px-6 text-sm md:px-16 md:text-xl">
-        <ul className="ml-4 flex list-disc flex-col gap-6">
-          <li>Next JS </li>
-          <li>React JS</li>
-          <li>TypeScript / JavaScript</li>
-          <li>Tailwind CSS</li>
-          <li>SASS</li>
-          <li>Vanilla CSS</li>
-          <li>HTML</li>
-        </ul>
-        <ul className="flex list-disc flex-col gap-6">
-          <li>Express JS</li>
-          <li>Node JS</li>
-          <li>Supabase</li>
-          <li>Appwrite</li>
-          <li>Mongo DB</li>
-          <li>MySQL</li>
-        </ul>
-        <ul className="flex list-disc flex-col gap-6">
-          <li>Zustand</li>
-          <li>Redux</li>
-          <li>Mesh JS</li>
-          <li>Git / Github</li>
-          <li>Vercel</li>
-          <li>C++</li>
-          <li>C</li>
-        </ul>
+
+      <motion.div className="my-12 grid grid-cols-2 md:flex w-full md:justify-around gap-10  px-6 text-sm md:px-16 md:text-xl">
+        {skillsData && (
+          <>
+            <ul className="ml-4 flex list-disc flex-col gap-6">
+              {skillsData
+                .filter((c) => c.category === "WEB")
+                .map((skill) => (
+                  <li key={skill.id} className="pl-1.5">{skill.name} </li>
+                ))}
+            </ul>
+            <ul className="ml-4 flex list-disc flex-col gap-6">
+              {skillsData
+                .filter((c) => c.category === "SERVER")
+                .map((skill) => (
+                  <li key={skill.id} className="pl-1.5">{skill.name} </li>
+                ))}
+            </ul>
+            
+            <ul className="ml-4 flex list-disc flex-col gap-6">
+              {skillsData
+                .filter((c) => c.category === "OTHER")
+                .map((skill) => (
+                  <li key={skill.id} className="pl-1.5">{skill.name} </li>
+                ))}
+            </ul>
+            <ul className="ml-4 flex list-disc flex-col gap-6">
+              {skillsData
+                .filter((c) => c.category === "AI")
+                .map((skill) => (
+                  <li key={skill.id} className="pl-1.5">{skill.name} </li>
+                ))}
+            </ul>
+          </>
+        )}
       </motion.div>
       <div className="mx-auto my-6 h-[1px] w-[90%] bg-white/15 md:my-12" />
 
