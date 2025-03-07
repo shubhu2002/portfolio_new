@@ -14,6 +14,7 @@
     "@studio-freight/lenis": "^1.0.42",
     "@supabase/supabase-js": "^2.43.6",
     "@t3-oss/env-nextjs": "^0.7.1",
+    "@tanstack/react-query": "^5.67.1",
     "axios": "^1.8.1",
     "framer-motion": "^11.0.3",
     "next": "^14.0.4",

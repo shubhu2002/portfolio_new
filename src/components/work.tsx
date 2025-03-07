@@ -7,9 +7,12 @@ import ReactPlayer from "react-player";
 import { useState } from "react";
 import { BiLoaderCircle } from "react-icons/bi";
 import { FILTERS } from "~/data/config";
+import { useQuery } from "@tanstack/react-query";
+import { apiInstance } from "~/utils";
+import { ProjectProps } from "~/types";
 
 const MyWorks: React.FC = () => {
-  const { toggleProjectModal, myProjects } = useAppStore();
+  const { toggleProjectModal } = useAppStore();
   const [loading, setLoading] = useState<boolean>(true);
   const [category, setCategory] = useState<{ txt: string; activeId: number }>({
     txt: "all",
@@ -28,6 +31,16 @@ const MyWorks: React.FC = () => {
     toggleProjectModal(true, ProjectId);
   };
 
+  const { data: projectData } = useQuery({
+    queryKey: ["myProjects"],
+    queryFn: async ({ signal }) =>
+      apiInstance
+        .get<{ success: boolean; data: ProjectProps[] }>("/projects/all", {
+          signal,
+        })
+        .then((res) => res.data.data),
+  });
+
   return (
     <section className="mb-12 w-full px-6 md:px-16 ">
       <motion.div
@@ -43,7 +56,7 @@ const MyWorks: React.FC = () => {
         {...animations}
         className="relative my-10 flex w-full justify-center"
       >
-        <div className="gradientBg2 -left-2 top-1/2 -translate-y-1/2 md:left-12 md:top-0 md:translate-y-0" />
+        <div className="gradientBg2 -left-2 top-1/2 z-50 -translate-y-1/2 md:left-12 md:top-0 md:translate-y-0" />
 
         <p className="w-full text-2xl md:max-w-[70%] md:text-3xl ">
           Pioneering web development, my projects showcases innovative coding
@@ -53,7 +66,7 @@ const MyWorks: React.FC = () => {
       </motion.div>
 
       <div className="my-3 mt-12 md:my-6 md:mt-24">
-        <div className="flex w-full flex-col items-center gap-6 bg-black px-4 py-6 md:px-0">
+        <div className="flex w-full flex-col items-center gap-6 px-4 py-6 md:px-0 ">
           <div className="flex items-center gap-0 rounded-[40px] bg-white/10 p-2 md:gap-4 md:p-4">
             {FILTERS.map((filter) => (
               <span
@@ -76,10 +89,11 @@ const MyWorks: React.FC = () => {
           </div>
 
           <div className="mt-8 grid w-full justify-items-center gap-y-10 md:grid-cols-2 md:grid-rows-3 md:gap-y-16">
-            {myProjects
+            {projectData
               ?.filter(
                 (c) => c.category && c.category.includes(`${category.txt}`),
-              ).reverse()
+              )
+              .reverse()
               .map((project) => (
                 <motion.div
                   key={project.id}

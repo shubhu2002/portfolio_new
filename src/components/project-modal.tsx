@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { useQuery } from "@tanstack/react-query";
 
 import { motion } from "framer-motion";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
@@ -10,24 +11,35 @@ import { IoIosLink } from "react-icons/io";
 
 import { useAppStore } from "~/store";
 import { getColorName } from "~/data/colors";
+import { ProjectProps } from "~/types";
+import { apiInstance } from "~/utils";
 
 const ProjectModal: React.FC = () => {
   const {
     toggleProjectModal,
     activeProjectId,
     setActiveProjectId,
-    myProjects,
   } = useAppStore();
+
+  const { data: projectData } = useQuery({
+    queryKey: ["myProjects"],
+    queryFn: async ({ signal }) =>
+      apiInstance
+        .get<{ success: boolean; data: ProjectProps[] }>("/projects/all", {
+          signal,
+        })
+        .then((res) => res.data.data),
+  });
 
   const prevProject = () => {
     if (activeProjectId > 1) {
       setActiveProjectId(activeProjectId - 1);
     }
   };
-  console.log();
+
   const nextProject = () => {
-    if (myProjects) {
-      if (activeProjectId < myProjects?.length) {
+    if (projectData) {
+      if (activeProjectId < projectData?.length) {
         setActiveProjectId(activeProjectId + 1);
       }
     }
@@ -41,7 +53,7 @@ const ProjectModal: React.FC = () => {
       className="fixed bottom-0 left-0 right-0 top-0 z-50 min-h-screen w-full backdrop-blur-lg"
     >
       <div className="flex h-full w-full items-center justify-center ">
-        {myProjects
+        {projectData
           ?.filter((project) => project.id === activeProjectId)
           ?.map((pr) => (
             <div
@@ -64,7 +76,7 @@ const ProjectModal: React.FC = () => {
                     <button
                       onClick={nextProject}
                       disabled={
-                        myProjects && activeProjectId >= myProjects?.length
+                        projectData && activeProjectId >= projectData?.length
                       }
                       className="opacity-85 disabled:opacity-35"
                     >

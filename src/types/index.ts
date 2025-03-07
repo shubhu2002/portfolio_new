@@ -1,5 +1,7 @@
 import { ReactElement } from "react";
 
+export const allowedCategories = ["WEB", "SERVER", "AI", "OTHER"] as const;
+export type CategoryType = (typeof allowedCategories)[number];
   export interface ProjectProps {
     id:number;
     heading: string;
@@ -10,6 +12,12 @@ import { ReactElement } from "react";
     tech_used: string[];
     github_link?: string;
     category:string[];
+  }
+
+  export interface SkillsProps {
+    id:number;
+    name: string;
+    category: CategoryType;
   }
 
 export interface ContactProps {

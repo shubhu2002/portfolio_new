@@ -2,13 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
+import { useQuery } from "@tanstack/react-query";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { LuMoveUpRight } from "react-icons/lu";
 
-import { useAppStore } from "~/store";
+import { ProjectProps } from "~/types";
+import { apiInstance, open_link } from "~/utils";
 
 const HomePage: React.FC = () => {
-  const { myProjects } = useAppStore();
   const animations = {
     variants: {
       visible: { y: 0, opacity: 1 },
@@ -18,6 +19,16 @@ const HomePage: React.FC = () => {
     initial: "hidden",
     viewport: { once: true },
   };
+
+  const { data: projectData } = useQuery({
+    queryKey: ["myProjects"],
+    queryFn: async ({ signal }) =>
+      apiInstance
+        .get<{ success: boolean; data: ProjectProps[] }>("/projects/all", {
+          signal,
+        })
+        .then((res) => res.data.data),
+  });
 
   return (
     <>
@@ -96,7 +107,7 @@ const HomePage: React.FC = () => {
             <p className="text-lg font-extrabold">
               Currently Works @ Nucast Pte. Ltd.
             </p>
-            <p className=" mt-1 text-lg">as Full Stack Developer Intern</p>
+            <p className=" mt-1 text-lg">as Full Stack Developer</p>
           </motion.div>
           <motion.div
             transition={{ duration: 0.8 }}
@@ -112,7 +123,7 @@ const HomePage: React.FC = () => {
 
         {/* projects */}
         <div className="my-3 grid w-full grid-cols-1 justify-items-center gap-6 md:my-6 md:grid-flow-row md:grid-cols-2 md:gap-y-10 ">
-          {myProjects
+          {projectData
             ?.filter((p) => [6, 8, 9, 14].includes(p.id))
             .map((project) => (
               <motion.div
@@ -121,6 +132,7 @@ const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 key={project.id}
+                onClick={() => open_link(project.link)}
                 className=" flex w-full cursor-pointer flex-col items-center"
               >
                 <motion.div className="h-[90%] w-[90%] overflow-hidden rounded-3xl border border-gray-400/40">

@@ -1,7 +1,11 @@
+import { useEffect, useState } from "react";
 import { type AppType } from "next/dist/shared/lib/utils";
 import Lenis from "@studio-freight/lenis";
 import "~/styles/globals.css";
-import { useEffect } from "react";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -15,7 +19,21 @@ const MyApp: AppType = ({ Component, pageProps }) => {
 
     return () => lenis.destroy();
   }, []);
-  return <Component {...pageProps} />;
+
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            refetchOnMount: false,
+            refetchOnReconnect: false,
+            refetchOnWindowFocus: false,
+          },
+        },
+      }),
+  );
+
+  return (<QueryClientProvider client={queryClient}><Component {...pageProps} /></QueryClientProvider>);
 };
 
 export default MyApp;
