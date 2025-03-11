@@ -1,30 +1,10 @@
-import { LuMoveUpRight } from "react-icons/lu";
-import { motion } from "framer-motion";
-import { contacts } from "~/data/config";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { LuMoveUpRight } from "react-icons/lu";
 
-const Connect:React.FC = () => {
-  const animations: {
-    variants: {
-      visible: {
-        x: number;
-        opacity: number;
-      };
-      hidden: {
-        x: number;
-        opacity: number;
-      };
-    };
-    whileInView: string;
-    initial: string;
-  } = {
-    variants: {
-      visible: { x: 0, opacity: 1 },
-      hidden: { x: -100, opacity: 0 },
-    },
-    whileInView: "visible",
-    initial: "hidden",
-  };
+import { CONTACTS, animations } from "~/data";
+
+const Connect: React.FC = () => {
   return (
     <section className="mt-10 flex w-full flex-col items-center justify-between px-6 md:flex-row md:px-16">
       <div className="mb-0 flex flex-col items-start gap-3 md:mb-20 md:gap-8">
@@ -33,7 +13,8 @@ const Connect:React.FC = () => {
             Ready To Get In Touch <span className="text-orange-400">?</span>{" "}
           </h1>
           <h1 className="py-2 text-4xl md:text-5xl">
-            Let&#39;s Connect <span className="text-6xl text-orange-400">.</span>
+            Let&#39;s Connect{" "}
+            <span className="text-6xl text-orange-400">.</span>
           </h1>
         </motion.div>
         <motion.div
@@ -56,7 +37,7 @@ const Connect:React.FC = () => {
           {...animations}
           className="mt-5 grid w-full grid-flow-col grid-cols-2 grid-rows-3 gap-5 text-lg"
         >
-          {contacts.map((contact) => (
+          {CONTACTS.map((contact) => (
             <a
               href={contact.href}
               target="_blank"
@@ -74,15 +55,12 @@ const Connect:React.FC = () => {
           ))}
         </motion.div>
       </div>
-      <motion.div transition={{ duration: 0.8 }}
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}>
-        <Image
-          src="/sidetr.png"
-          alt="img"
-          width={600}
-          height={600}
-        ></Image>
+      <motion.div
+        transition={{ duration: 0.8 }}
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+      >
+        <Image src="/sidetr.png" alt="img" width={600} height={600}></Image>
       </motion.div>
     </section>
   );

@@ -8,14 +8,12 @@ export type CategoryType = (typeof allowedCategories)[number];
     src: string;
     link: string;
     description: string;
-    images: string[];
     tech_used: string[];
     github_link?: string;
     category:string[];
   }
 
   export interface SkillsProps {
-    id:number;
     name: string;
     category: CategoryType;
   }
@@ -27,7 +25,7 @@ export interface ContactProps {
     icon: ReactElement;
   }
   
- export interface ImageDataProps {
+ export interface SkillsImageProps {
     id: number;
     src: string;
     name: string;

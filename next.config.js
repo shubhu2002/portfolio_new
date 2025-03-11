@@ -22,6 +22,9 @@ const config = {
       {
         hostname: "fmpociaoebgngvtsbqdz.supabase.co",
       },
+      {
+        hostname:"firebasestorage.googleapis.com"
+      }
     ],
   },
 };

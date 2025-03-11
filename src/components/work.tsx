@@ -1,15 +1,13 @@
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-import { motion } from "framer-motion";
-import { useAppStore } from "~/store";
 import ReactPlayer from "react-player";
-import { useState } from "react";
+import { motion } from "framer-motion";
+import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { BiLoaderCircle } from "react-icons/bi";
-import { FILTERS } from "~/data/config";
-import { useQuery } from "@tanstack/react-query";
-import { apiInstance } from "~/utils";
-import { ProjectProps } from "~/types";
+
+import { useAppStore } from "~/store";
+import { FILTERS, PROJECTS, animations } from "~/data";
 
 const MyWorks: React.FC = () => {
   const { toggleProjectModal } = useAppStore();
@@ -18,28 +16,10 @@ const MyWorks: React.FC = () => {
     txt: "all",
     activeId: 1,
   });
-  const animations = {
-    variants: {
-      visible: { x: 0, opacity: 1 },
-      hidden: { x: -100, opacity: 0 },
-    },
-    whileInView: "visible",
-    initial: "hidden",
-    viewport: { once: true },
-  };
+
   const handleClick = (ProjectId: number) => {
     toggleProjectModal(true, ProjectId);
   };
-
-  const { data: projectData } = useQuery({
-    queryKey: ["myProjects"],
-    queryFn: async ({ signal }) =>
-      apiInstance
-        .get<{ success: boolean; data: ProjectProps[] }>("/projects/all", {
-          signal,
-        })
-        .then((res) => res.data.data),
-  });
 
   return (
     <section className="mb-12 w-full px-6 md:px-16 ">
@@ -88,26 +68,28 @@ const MyWorks: React.FC = () => {
             ))}
           </div>
 
-          <div className="mt-8 grid w-full justify-items-center gap-y-10 md:grid-cols-2 md:grid-rows-3 md:gap-y-16">
-            {projectData
-              ?.filter(
-                (c) => c.category && c.category.includes(`${category.txt}`),
-              )
+          <div className="mt-8 grid w-full justify-items-center gap-x-7 gap-y-10 md:grid-cols-2 md:grid-rows-3 md:gap-y-16">
+            {PROJECTS?.filter(
+              (c) => c.category && c.category.includes(`${category.txt}`),
+            )
               .reverse()
               .map((project) => (
                 <motion.div
                   key={project.id}
                   transition={{ duration: 0.8 }}
                   {...animations}
-                  className=" flex w-full cursor-pointer flex-col items-center"
+                  className=" flex h-full max-h-[550px] w-full max-w-[550px] cursor-pointer flex-col items-center"
                 >
                   <motion.div
                     whileHover={{ scale: 1 }}
-                    className="relative h-[90%] w-[90%] overflow-hidden rounded-3xl border border-gray-400/40"
+                    className="relative h-fit w-fit overflow-hidden rounded-[18px] border border-gray-400/40"
                     onClick={() => handleClick(project.id)}
                   >
                     {project.src.includes("mp4") ? (
-                      <motion.div whileHover={{ scale: 1.15 }}>
+                      <motion.div
+                        whileHover={{ scale: 1.15 }}
+                        className="h-fit w-fit"
+                      >
                         {loading && (
                           <div className="absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center">
                             <BiLoaderCircle

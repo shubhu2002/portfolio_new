@@ -2,33 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
-import { useQuery } from "@tanstack/react-query";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { LuLoader, LuMoveUpRight } from "react-icons/lu";
 
-import { ProjectProps } from "~/types";
-import { apiInstance, open_link } from "~/utils";
+import { open_link } from "~/utils";
+import { animations, PROJECTS } from "~/data";
 
 const HomePage: React.FC = () => {
-  const animations = {
-    variants: {
-      visible: { y: 0, opacity: 1 },
-      hidden: { y: 100, opacity: 0 },
-    },
-    whileInView: "visible",
-    initial: "hidden",
-    viewport: { once: true },
-  };
-
-  const { data: projectData } = useQuery({
-    queryKey: ["myProjects"],
-    queryFn: async ({ signal }) =>
-      apiInstance
-        .get<{ success: boolean; data: ProjectProps[] }>("/projects/all", {
-          signal,
-        })
-        .then((res) => res.data.data),
-  });
 
   return (
     <>
@@ -122,10 +102,15 @@ const HomePage: React.FC = () => {
         <div className="mx-auto mt-5 h-[1px] w-full bg-white/15 md:mt-10" />
 
         {/* projects */}
-        {projectData ? (
-          <div className="my-3 grid w-full grid-cols-1 justify-items-center gap-6 md:my-6 md:grid-flow-row md:grid-cols-2 md:gap-y-10 ">
-            {projectData
-              .filter((p) => [6, 8, 9, 14].includes(p.id))
+        <>
+        <h1 className="text-4xl md:text-5xl text-center my-12">
+            Featured Works <span className="text-orange-400">.</span>
+          </h1>
+        </>
+        {PROJECTS ? (
+          <div className=" grid w-full grid-cols-1 justify-items-center gap-6 md:my-6 md:grid-flow-row md:grid-cols-2 md:gap-y-10 ">
+            {PROJECTS
+              .filter((p) => [6, 8, 14, 19].includes(p.id))
               .map((project) => (
                 <motion.div
                   transition={{ duration: 0.8 }}
@@ -186,7 +171,7 @@ const HomePage: React.FC = () => {
             <LuLoader size={32} className="my-32 animate-spin opacity-50" />
           </div>
         )}
-        {projectData && (
+        {PROJECTS && (
           <div className="relative my-3 flex w-full justify-center md:my-6">
             <Link
               href={`/works`}

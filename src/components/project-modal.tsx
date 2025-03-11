@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { useQuery } from "@tanstack/react-query";
 
 import { motion } from "framer-motion";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
@@ -11,8 +10,7 @@ import { IoIosLink } from "react-icons/io";
 
 import { useAppStore } from "~/store";
 import { getColorName } from "~/data/colors";
-import { ProjectProps } from "~/types";
-import { apiInstance } from "~/utils";
+import { PROJECTS } from "~/data";
 
 const ProjectModal: React.FC = () => {
   const {
@@ -21,15 +19,6 @@ const ProjectModal: React.FC = () => {
     setActiveProjectId,
   } = useAppStore();
 
-  const { data: projectData } = useQuery({
-    queryKey: ["myProjects"],
-    queryFn: async ({ signal }) =>
-      apiInstance
-        .get<{ success: boolean; data: ProjectProps[] }>("/projects/all", {
-          signal,
-        })
-        .then((res) => res.data.data),
-  });
 
   const prevProject = () => {
     if (activeProjectId > 1) {
@@ -38,8 +27,8 @@ const ProjectModal: React.FC = () => {
   };
 
   const nextProject = () => {
-    if (projectData) {
-      if (activeProjectId < projectData?.length) {
+    if (PROJECTS) {
+      if (activeProjectId < PROJECTS?.length) {
         setActiveProjectId(activeProjectId + 1);
       }
     }
@@ -53,7 +42,7 @@ const ProjectModal: React.FC = () => {
       className="fixed bottom-0 left-0 right-0 top-0 z-50 min-h-screen w-full backdrop-blur-lg"
     >
       <div className="flex h-full w-full items-center justify-center ">
-        {projectData
+        {PROJECTS
           ?.filter((project) => project.id === activeProjectId)
           ?.map((pr) => (
             <div
@@ -76,7 +65,7 @@ const ProjectModal: React.FC = () => {
                     <button
                       onClick={nextProject}
                       disabled={
-                        projectData && activeProjectId >= projectData?.length
+                        PROJECTS && activeProjectId >= PROJECTS?.length
                       }
                       className="opacity-85 disabled:opacity-35"
                     >
@@ -95,11 +84,11 @@ const ProjectModal: React.FC = () => {
                     {pr.heading}
                   </span>
                 </div>
-                {/* {pr.description && (
+                {pr.description && (
                   <div className="mb-6 text-[4.5vw] md:mb-10 md:text-[1.5vw] ">
                     {pr.description}
                   </div>
-                )} */}
+                )}
 
                 {pr.link && (
                   <div className="mb-6 flex flex-col gap-1 text-[4.5vw] md:mb-10 md:flex-row md:items-center md:gap-3 md:text-[1.5vw] ">
