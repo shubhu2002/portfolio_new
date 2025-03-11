@@ -64,7 +64,7 @@ export const PROJECTS:ProjectProps[] = [
     {
         id:7,
         heading:"Personal Portfolio",
-        src:"https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fportfolio.mp4?alt=media&token=ef2f8349-8f35-4ed9-aaea-24c8c3f9b29b",
+        src:"https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fportfolio_new.mp4?alt=media&token=ffda7bcc-ec09-4d69-976d-22d2e4ad5e62",
         link:"https://shubhu.vercel.app/",
         description:"A Personal Portfolio to showcase my expertise in Web developement , AI Development and Other Fields.",
         github_link:"https://github.com/shubhu2002/portfolio_new",
