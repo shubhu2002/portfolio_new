@@ -166,7 +166,7 @@ export const PROJECTS:ProjectProps[] = [
     {
         id:17,
         heading:"NuAuth",
-        src:"https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fnuauth_latest.mp4?alt=media&token=83b6f3d0-1435-47bf-a74c-9234007675cd",
+        src:"https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2FNu-Auth.mp4?alt=media&token=0e0bb0f3-473a-4c2a-aa49-1de70f1a2ce6",
         link:"https://nu-auth-six.vercel.app/",
         description:"Authenticate, Secure and Monetize Your Content",
         github_link:"",
