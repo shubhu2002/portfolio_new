@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { type AppType } from "next/dist/shared/lib/utils";
-import Lenis from "@studio-freight/lenis";
+import Lenis from "lenis";
 import "~/styles/globals.css";
 
 const MyApp: AppType = ({ Component, pageProps }) => {

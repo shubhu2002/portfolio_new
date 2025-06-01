@@ -1,0 +1,105 @@
+/* thunder */
+@font-face {
+    font-family: 'thunder-bold';
+    src: url('/fonts/thunder/Thunder-BoldLC_700.otf') format('opentype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'thunder-extrabold';
+    src: url('/fonts/thunder/Thunder-ExtraBoldLC_800.otf') format('opentype');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'thunder-semibold';
+    src: url('/fonts/thunder/Thunder-SemiBoldLC_600.otf') format('opentype');
+    font-weight: 600;
+}
+
+
+
+/* neue */
+@font-face {
+    font-family: 'neue-regular';
+    src: url('/fonts/neue-machina/PPNeueMachina-PlainRegular.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'neue-light';
+    src: url('/fonts/neue-machina/PPNeueMachina-PlainLight.otf') format('opentype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'neue-ultra-bold';
+    src: url('/fonts/neue-machina/PPNeueMachina-PlainUltrabold.otf') format('opentype');
+    font-weight: 900;
+}
+
+
+
+
+/* offbit */
+@font-face {
+    font-family: 'offbit-regular';
+    src: url('/fonts/offbit-trial/OffBitTrial-Regular.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'offbit-101';
+    src: url('/fonts/offbit-trial/OffBitTrial-101.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'offbit-101-bold';
+    src: url('/fonts/offbit-trial/OffBitTrial-101Bold.otf') format('opentype');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'offbit-bold';
+    src: url('/fonts/offbit-trial/OffBitTrial-Bold.otf') format('opentype');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'offbit-dot';
+    src: url('/fonts/offbit-trial/OffBitTrial-Dot.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'offbit-dot-bold';
+    src: url('/fonts/offbit-trial/OffBitTrial-DotBold.otf') format('opentype');
+    font-weight: 800;
+}
+
+
+/* helvetica  */
+@font-face {
+    font-family: 'helvetica-light';
+    src: url('/fonts/helvetica/HelveticaNeue-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'helvetica-regular';
+    src: url('/fonts/helvetica/HelveticaNeue.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'helvetica-medium';
+    src: url('/fonts/helvetica/HelveticaNeue-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'helvetica-bold';
+    src: url('/fonts/helvetica/HelveticaNeue-Bold.ttf') format('truetype');
+    font-weight: 800;
+}

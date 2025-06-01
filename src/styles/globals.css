@@ -4,21 +4,15 @@
 
 @import url('custom-scrollbar.css');
 @import url('lenis-scroll.css');
+@import url('fonts.css');
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-weight: 500;
-  background: linear-gradient();
-  background: linear-gradient(
-    129.62deg,
-    #01020d 35.39%,
-    #000113 61.07%,
-    #000000 91.41%
-  ) !important;
-  background: black;
-  color: #fff;
+  background: #020013;
+  color: #c2cde7;
 }
 
 /* Navbar CSS */
@@ -35,10 +29,11 @@ body {
 
 .btn {
   display: flex;
-  background-color: #42e621;
+  background: linear-gradient(180deg, #51baff, #2fa4ff);;
   padding: 12px 24px;
   border-radius: 12px;
   z-index: 40;
+  color: black;
 }
 
 .btn:hover {
@@ -126,4 +121,15 @@ body {
     height: 25vh;
     filter: blur(50px);
   }
+}
+
+.clipbg {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    calc(100% - 25px) 50%,
+    100% 100%,
+    0 100%,
+    25px 50%
+  );
 }

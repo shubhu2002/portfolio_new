@@ -11,21 +11,33 @@
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
-    "@studio-freight/lenis": "^1.0.42",
+    "@react-three/drei": "^10.1.2",
+    "@react-three/fiber": "^9.1.2",
     "@supabase/supabase-js": "^2.43.6",
     "@t3-oss/env-nextjs": "^0.7.1",
     "@tanstack/react-query": "^5.67.1",
+    "@types/three": "^0.176.0",
     "axios": "^1.8.1",
+    "clsx": "^2.1.1",
     "framer-motion": "^11.0.3",
+    "gsap": "^3.13.0",
+    "lenis": "^1.3.4",
     "next": "^14.0.4",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-fast-marquee": "^1.6.4",
     "react-icons": "^5.0.1",
+    "react-intersection-observer": "^9.16.0",
+    "react-lottie": "^1.2.10",
     "react-multi-carousel": "^2.8.4",
+    "react-parallax-tilt": "^1.7.296",
     "react-player": "^2.16.0",
+    "react-scroll": "^1.9.3",
     "swiper": "^11.0.5",
+    "tailwind-merge": "^3.3.0",
+    "three": "^0.176.0",
+    "three-globe": "^2.42.8",
     "zod": "^3.22.4",
     "zustand": "^4.5.2"
   },
@@ -34,6 +46,8 @@
     "@types/node": "^18.17.0",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
+    "@types/react-lottie": "^1.2.10",
+    "@types/react-scroll": "^1.8.10",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
     "@typescript-eslint/parser": "^6.11.0",
     "autoprefixer": "^10.4.14",
@@ -48,5 +62,5 @@
   "ct3aMetadata": {
     "initVersion": "7.25.2"
   },
-  "packageManager": "npm@10.2.4"
+  "packageManager": "pnpm@8.7.6"
 }

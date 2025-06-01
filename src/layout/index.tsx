@@ -1,9 +1,7 @@
 import { Comfortaa } from "next/font/google";
 import Head from "next/head";
 
-import Footer from "~/components/footer";
 import Navbar from "~/components/navbar";
-import ProjectModal from "~/components/project-modal";
 import { useAppStore } from "~/store";
 
 const comfortaa_font = Comfortaa({
@@ -21,13 +19,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className={`relative min-h-screen w-full text-white font-comfortaa ${comfortaa_font.variable} `}
+        className={`relative min-h-screen w-full bg-primary text-center  text-secondary font-neue-light tracking-wider ${comfortaa_font.variable} `}
       >
         <Navbar />
+
         {children}
-        <Footer />
       </main>
-      {showProjectModal && <ProjectModal />}
     </>
   );
 };
