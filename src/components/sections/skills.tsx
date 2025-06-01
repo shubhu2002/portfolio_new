@@ -61,15 +61,15 @@ const Skills = () => {
               />
             </div>
             <div className="relative top-[2vw] flex w-full justify-between py-8 md:top-auto">
-              <div className="hide-scroll grid h-full w-full grid-flow-row grid-cols-3 justify-between gap-y-12 sm:grid-cols-5 sm:gap-y-20">
+              <div className="hide-scroll grid h-full w-full grid-flow-row grid-cols-3 justify-between gap-y-12 sm:grid-cols-6 sm:gap-y-20">
                 {SKILLSIMAGEPROPS.map((img, id) => (
                   <motion.div
                     initial={{ y: 60, scale: 0.8, opacity: 0 }}
                     whileInView={{ y: 0, scale: 1, opacity: 1 }}
                     viewport={{ once: false }}
-                    transition={{ duration: 0.3, delay: 0.07 * id }}
+                    transition={{ duration: 0.3, delay: 0.05 * id }}
                     className="flex flex-col items-center gap-2"
-                    key={img.id}
+                    key={id}
                   >
                     <Image
                       src={img.src}

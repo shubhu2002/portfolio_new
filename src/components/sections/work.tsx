@@ -3,7 +3,7 @@ import Image from "next/image";
 import ReactPlayer from "react-player";
 import { Element } from "react-scroll";
 import { AnimatePresence, motion } from "framer-motion";
-import { LuArrowDownToLine, LuArrowUpFromLine } from "react-icons/lu";
+import { LuAlignLeft, LuArrowBigLeft, LuArrowBigRight, LuArrowDownToLine, LuArrowUpFromLine } from "react-icons/lu";
 
 import { PinContainer } from "../ui/Pin";
 import { PROJECTS } from "~/data";
@@ -110,7 +110,7 @@ const RecentProjects = () => {
   return (
     <Element name="works" id="works">
       <AnimatePresence>
-        <div ref={sectionRef} className=" my-20 px-[4%] sm:px-[6%] ">
+        <div ref={sectionRef} className=" my-10 sm:my-20 px-[4%] sm:px-[6%] ">
           <motion.div
             {...animations}
             className="mb-10 font-thunder-semibold text-4xl tracking-wider sm:mb-16 md:text-6xl "
@@ -202,8 +202,8 @@ const RecentProjects = () => {
                       ))}
                     </div>
 
-                    <div className="text-left text-xs text-tertiary">
-                      associated with{" "}
+                    <div className="text-left text-xs text-tertiary flex items-center gap-1">
+                      <LuArrowBigRight/> associated with{" "}
                       <span className="text-blue">
                         {item.category.some((c) => c === "nucast")
                           ? "Nucast Pte. Ltd."
@@ -217,7 +217,7 @@ const RecentProjects = () => {
           </motion.div>
           <div
             onClick={() => setExpand(!expand)}
-            className="mx-auto mt-2 flex w-fit cursor-pointer items-center gap-1 rounded-lg border border-tertiary/20 px-4 py-1.5 shadow-deep-inset"
+            className="mx-auto mt-5 sm:mt-2 flex w-fit cursor-pointer items-center gap-1 rounded-lg border border-tertiary/20 px-4 py-1.5 shadow-deep-inset"
           >
             {expand ? "Show Less" : "Show Full"}
 

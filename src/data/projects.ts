@@ -63,7 +63,7 @@ export const PROJECTS:ProjectProps[] = [
     },
     {
         id:7,
-        heading:"Personal Portfolio",
+        heading:"Old Personal Portfolio",
         src:"https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fportfolio_new.mp4?alt=media&token=ffda7bcc-ec09-4d69-976d-22d2e4ad5e62",
         link:"https://shubhu.vercel.app/",
         description:"A Personal Portfolio to showcase my expertise in Web developement , AI Development and Other Fields.",
@@ -78,7 +78,7 @@ export const PROJECTS:ProjectProps[] = [
         link:"https://tourice-frontend-ts.vercel.app/",
         description:"Embark on unforgettable journeys with Tourice, your ultimate companion in travel adventures. From exotic getaways to cultural expeditions, Tourice provides a seamless platform for managing all aspects of your travel experience. Discover breathtaking destinations, book accommodations, plan excursions, and create lifelong memories with ease.",
         github_link:"https://github.com/shubhu2002/tourice-frontend-ts",
-        tech_used:["Next JS","Typescript","Tailwind CSS","Mongo DB","Express JS","Node JS","Vercel"],
+        tech_used:["Next JS","Typescript","Tailwind CSS","Mongo DB","Express JS","Firebase","Framer Motion"],
         category:["all","personal"]
     },
 
@@ -90,7 +90,7 @@ export const PROJECTS:ProjectProps[] = [
         link:"https://live.nucast.io/",
         description:"Build the future of Interactive Entertainment . It is a state of art livestreaming protocol that is set to change the content creation game with features that include Live Predictions with wins from a collective ADA pool. Vibrant chat rooms for engaging discussions. Simple micropayments to tip your favorite creators. A platform free from censorship",
         github_link:"",
-        tech_used:["Next JS","Typescript","Supabase","Mesh JS","Express JS","Tailwind CSS"],
+        tech_used:["Next JS","Typescript","Supabase","Mesh JS (Blockchain)","Express JS","Mux Player"],
         category:["all","nucast"]
     },
     {
@@ -100,7 +100,7 @@ export const PROJECTS:ProjectProps[] = [
         link:"https://drep-client.vercel.app/",
         description:"DrepWatch : Delegate , Ask Question , Answers . . . . ",
         github_link:"",
-        tech_used:["Next JS","TypeScript","Tailwind CSS","Supabase","Mesh JS","Lenis"],
+        tech_used:["Next JS","TypeScript","Express JS","Supabase","Mesh JS (Blockchain)","Lenis"],
         category:["all","nucast"]
     },
     {
@@ -110,17 +110,17 @@ export const PROJECTS:ProjectProps[] = [
         link:"https://lv-research-rho.vercel.app/",
         description:"The Gateway to On-chain Insights curated in a Decentralized Manner.",
         github_link:"",
-        tech_used:["Next JS","TypeScript","Tailwind CSS","Supabase","Mesh JS","Lenis"],
+        tech_used:["Next JS","TypeScript","Supabase","Mesh JS (Blockchain)","Lenis"],
         category:["all","nucast"]
     },
     {
         id:12,
         heading:"Trivolve Tech",
         src:"https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Ftrivolve.mp4?alt=media&token=daa9c4d8-2e2d-405f-856e-2cf7181db0fa",
-        link:"https://trivolvetech-landing.vercel.app/",
+        link:"https://trivolvetech.com/",
         description:"At Trivolve Tech, we specialize in blockchain and AI, leading the charge with innovative technologies and forward-thinking strategies to empower our clients to reach new heights. Our mission is to amplify your ambitions, delivering tailored solutions that not only address your immediate challenges but also unlock a world of new opportunities. Our comprehensive suite of services is designed to support a diverse clientele, from dynamic startups eager to disrupt the market to large government entities aiming to enhance public services.",
         github_link:"",
-        tech_used:["Next JS","Typecript","Tailwind CSS","GSAP","Framer Motion"],
+        tech_used:["Next JS","Typecript","GSAP","Framer Motion"],
         category:["all","nucast"]
     },
     {
@@ -130,7 +130,7 @@ export const PROJECTS:ProjectProps[] = [
         link:"https://staging.syncai.network/",
         description:"AI-Powered DePIN Network on Cardano. Enabling communications between Users, dApps and Blockchains.",
         github_link:"",
-        tech_used:["Next JS","TypeScript","Tailwind CSS","Supabase","Mesh JS","Lenis","OPENAI"],
+        tech_used:["Next JS","TypeScript","Express JS","Supabase","Mesh JS (Blockchain)","Three JS"],
         category:["all","nucast"]
     },
     {
@@ -150,7 +150,7 @@ export const PROJECTS:ProjectProps[] = [
         link:"https://drep.syncai.network/",
         description:"AI-Powered DePIN Network on Cardano. Enabling communications between Users, dApps and Blockchains.",
         github_link:"",
-        tech_used:["Next JS","TypeScript","Tailwind CSS","Supabase","Lenis","OPENAI","Mesh JS"],
+        tech_used:["Next JS","TypeScript","Supabase","Python","Chat AI","Mesh JS (Blockchain)"],
         category:["all","nucast"]
     },
     {
@@ -167,10 +167,10 @@ export const PROJECTS:ProjectProps[] = [
         id:17,
         heading:"NuAuth",
         src:"https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2FNu-Auth.mp4?alt=media&token=0e0bb0f3-473a-4c2a-aa49-1de70f1a2ce6",
-        link:"https://nu-auth-six.vercel.app/",
+        link:"https://nuauth.nucast.io/",
         description:"Authenticate, Secure and Monetize Your Content",
         github_link:"",
-        tech_used:["Next JS","Typescript","Tailwind CSS"],
+        tech_used:["Next JS","Typescript","Python","Mesh JS (Blockchain)","Chat AI","Masumi","Supabase"],
         category:["all","nucast"]
     },
     {
@@ -180,7 +180,7 @@ export const PROJECTS:ProjectProps[] = [
         link:"https://rwa-lending-app-ts.vercel.app/deal/1",
         description:"Become an investor in the crypto space.",
         github_link:"",
-        tech_used:["Next JS","Typescript","Tailwind CSS","Chart.js","Mesh JS","Crypto"],
+        tech_used:["Next JS","Typescript","Chart.js","Crypto","Mesh JS (Blockchain)"],
         category:["all","nucast"]
     },
     {
@@ -190,7 +190,7 @@ export const PROJECTS:ProjectProps[] = [
         link:"https://subscription.nucast.io/",
         description:"Nucast subscriptions empowers NFT, gaming, and digital media projects with automated payments via smart contract. Unlock new revenue streams, enhance user experiences, and attract liquidity on Cardano.",
         github_link:"",
-        tech_used:["Next JS","Typescript","Tailwind CSS","Mesh JS","Framer Motion"],
+        tech_used:["Next JS","Typescript","Python","Mesh JS (Blockchain)","Express JS","Supabase"],
         category:["all","nucast"]
     },
 

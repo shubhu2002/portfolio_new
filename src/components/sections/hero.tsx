@@ -114,7 +114,7 @@ const Hero = () => {
               <div className="flex w-full grid-flow-col items-center justify-between  text-primary">
                 {TAGS.map((t, i) => (
                   <div key={i} className="mx-2 flex items-center sm:mx-7 ">
-                    <div className="tracking-wides font-thunder-semibold text-lg uppercase sm:text-2xl">
+                    <div className="tracking-wider font-thunder-semibold text-lg uppercase sm:text-2xl">
                       {t}
                     </div>
                     <FaDiamond className="mb-1 ml-3 text-[8px] sm:ml-10 sm:text-sm" />

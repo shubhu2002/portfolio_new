@@ -27,7 +27,7 @@ const AboutMe = () => {
   };
 
   return (
-    <Element name="about" id="about" className="mb-48">
+    <Element name="about" id="about" className="mb-20 sm:mb-48">
       <AnimatePresence>
         <div className=" px-[4%] sm:px-[6%] ">
           <motion.div
@@ -82,7 +82,7 @@ const AboutMe = () => {
                       alt="grid"
                       width={1000}
                       height={1000}
-                      className="absolute inset-0 z-[10]"
+                      className="absolute inset-0 w-full h-full z-[10]"
                     />
                     <div className="relative z-[20] p-5 ">
                       <div className=" text-left">

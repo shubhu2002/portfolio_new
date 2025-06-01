@@ -26,7 +26,6 @@ export interface ContactProps {
   }
   
  export interface SkillsImageProps {
-    id: number;
     src: string;
     name: string;
   }
