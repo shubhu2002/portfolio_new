@@ -3,7 +3,7 @@ import Image from "next/image";
 import ReactPlayer from "react-player";
 import { Element } from "react-scroll";
 import { AnimatePresence, motion } from "framer-motion";
-import { LuAlignLeft, LuArrowBigLeft, LuArrowBigRight, LuArrowDownToLine, LuArrowUpFromLine } from "react-icons/lu";
+import { LuArrowBigRight, LuArrowDownToLine, LuArrowUpFromLine } from "react-icons/lu";
 
 import { PinContainer } from "../ui/Pin";
 import { PROJECTS } from "~/data";
@@ -77,7 +77,7 @@ const RecentProjects = () => {
 
     // Add some buffer for gaps and margins
     return calculatedHeight + 200;
-  }, [isClient, screenWidth, PROJECTS.length]);
+  }, [isClient, screenWidth]);
 
   useEffect(() => {
     const handleScroll = () => {

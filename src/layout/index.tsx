@@ -2,7 +2,6 @@ import { Comfortaa } from "next/font/google";
 import Head from "next/head";
 
 import Navbar from "~/components/navbar";
-import { useAppStore } from "~/store";
 
 const comfortaa_font = Comfortaa({
   variable: "--font-comfortaa",
@@ -10,7 +9,6 @@ const comfortaa_font = Comfortaa({
 });
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const { showProjectModal } = useAppStore();
   return (
     <>
       <Head>
