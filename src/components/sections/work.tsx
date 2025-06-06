@@ -1,30 +1,32 @@
-import { useMemo, useEffect, useRef, useState } from "react";
+import { useMemo, useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import ReactPlayer from "react-player";
 import { Element } from "react-scroll";
 import { AnimatePresence, motion } from "framer-motion";
-import { LuArrowBigRight, LuArrowDownToLine, LuArrowUpFromLine } from "react-icons/lu";
+import {
+  LuArrowBigRight,
+  LuArrowDownToLine,
+  LuArrowUpFromLine,
+} from "react-icons/lu";
 
 import { PinContainer } from "../ui/Pin";
-import { PROJECTS } from "~/data";
+import { ANIMATION_CONFIG, PROJECTS } from "~/data";
 import useIsMobile from "~/hooks/useIsMobile";
 
-const RecentProjects = () => {
-    const animations = {
-    variants: {
-      visible: { y: 0, opacity: 1, scale: 1 },
-      hidden: { y: 60, opacity: 0, scale: 0.8 },
-    },
-    whileInView: "visible",
-    initial: "hidden",
-    transition: {
-      duration: 1,
-    },
-    viewport: {
-      once: false,
-    },
-  };
+const BREAKPOINTS = {
+  DESKTOP: 1024,
+  TABLET: 640,
+};
 
+const PROJECT_HEIGHTS = {
+  DESKTOP: { perRow: 3, height: 550 },
+  TABLET: { perRow: 2, height: 480 },
+  MOBILE: { perRow: 1, height: 550 },
+};
+
+const sortedProjects = PROJECTS?.sort((a, b) => b.id - a.id);
+
+const RecentProjects = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const lastScrollY = useRef<number>(0);
 
@@ -33,6 +35,7 @@ const RecentProjects = () => {
   const [isClient, setIsClient] = useState(false);
 
   const isMobile = useIsMobile();
+
   // Handle client-side mounting
   useEffect(() => {
     setIsClient(true);
@@ -42,106 +45,95 @@ const RecentProjects = () => {
   // Handle window resize
   useEffect(() => {
     if (!isClient) return;
+    let timeoutId: NodeJS.Timeout;
 
     const handleResize = () => {
-      setScreenWidth(window.innerWidth);
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        setScreenWidth(window.innerWidth);
+      }, 100);
     };
 
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(timeoutId);
+    };
   }, [isClient]);
 
   const fullHeight = useMemo(() => {
     if (!isClient || !screenWidth) return 2000; // Fallback for SSR
 
-    let projectsPerRow: number;
-    let heightPerProject: number;
+    const config =
+      screenWidth >= BREAKPOINTS.DESKTOP
+        ? PROJECT_HEIGHTS.DESKTOP
+        : screenWidth >= BREAKPOINTS.TABLET
+          ? PROJECT_HEIGHTS.TABLET
+          : PROJECT_HEIGHTS.MOBILE;
 
-    // More accurate breakpoints and heights
-    if (screenWidth >= 1024) {
-      // Desktop: 3 projects per row
-      projectsPerRow = 3;
-      heightPerProject = 550; // lg:min-h-[30rem] + gaps
-    } else if (screenWidth >= 640) {
-      // Tablet: 2 projects per row
-      projectsPerRow = 2;
-      heightPerProject = 480; // Smaller height for tablet
-    } else {
-      // Mobile: 1 project per row
-      projectsPerRow = 1;
-      heightPerProject = 550; // h-[25rem] + gaps for mobile
-    }
-
-    const rows = Math.ceil(PROJECTS.length / projectsPerRow);
-    const calculatedHeight = rows * heightPerProject;
-
-    // Add some buffer for gaps and margins
-    return calculatedHeight + 200;
+    const rows = Math.ceil(PROJECTS.length / config.perRow);
+    return rows * config.height + 200;
   }, [isClient, screenWidth]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current || !expand) return;
+  const collapsedHeight = useMemo(
+    () => (isMobile ? "1100px" : "800px"),
+    [isMobile],
+  );
 
-      const currentScrollY = window.scrollY;
-      const isScrollingUp = currentScrollY < lastScrollY.current;
+  const handleScroll = useCallback(() => {
+    if (!sectionRef.current || !expand) return;
 
-      // Only check for collapse when scrolling UP
-      if (isScrollingUp) {
-        const sectionRect = sectionRef.current.getBoundingClientRect();
-        const sectionTop = sectionRect.top;
+    const currentScrollY = window.scrollY;
+    const isScrollingUp = currentScrollY < lastScrollY.current;
 
-        // If scrolled up and section top is below the viewport (meaning we scrolled above it)
-        if (sectionTop > window.innerHeight) {
-          setExpand(false);
-        }
+    if (isScrollingUp) {
+      const sectionRect = sectionRef.current.getBoundingClientRect();
+      if (sectionRect.top > window.innerHeight) {
+        setExpand(false);
       }
+    }
 
-      lastScrollY.current = currentScrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    lastScrollY.current = currentScrollY;
   }, [expand]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  const toggleExpand = useCallback(() => {
+    setExpand(prev => !prev);
+  }, []);
+  
+  const gradientAnimation = useMemo(() => ({
+    opacity: expand ? 0 : 1,
+    transition: { duration: 0.3, ease: "linear" }
+  }), [expand]);
+
+  const containerAnimation = useMemo(() => ({
+    maxHeight: expand ? `${fullHeight}px` : collapsedHeight,
+    transition: { duration: 0.3, ease: "linear" }
+  }), [expand, fullHeight, collapsedHeight]);
 
   return (
     <Element name="works" id="works">
       <AnimatePresence>
-        <div ref={sectionRef} className=" my-10 sm:my-20 px-[4%] sm:px-[6%] ">
+        <div ref={sectionRef} className=" my-10 px-[4%] sm:my-20 sm:px-[6%] ">
           <motion.div
-            {...animations}
+            {...ANIMATION_CONFIG}
             className="mb-10 font-thunder-semibold text-4xl tracking-wider sm:mb-16 md:text-6xl "
           >
             My <span className="uppercase text-blue">Works</span>
           </motion.div>
           <motion.div
-            animate={{
-              maxHeight: expand
-                ? `${fullHeight}px`
-                : isMobile
-                  ? "1100px"
-                  : "800px",
-            }}
-            transition={{
-              duration: 0.3,
-              ease: "linear",
-            }}
+            animate={containerAnimation}
             className={`relative flex flex-wrap items-center justify-around gap-x-16  overflow-hidden transition-all duration-500`}
           >
             <motion.div
-              animate={{
-                opacity: expand ? 0 : 1,
-              }}
-              transition={{
-                duration: 0.3,
-                ease: "linear",
-              }}
+              animate={gradientAnimation}
               className="absolute inset-0 z-[70] h-full w-full bg-gradient-to-b from-transparent via-transparent to-[#020013]"
             />
-            {PROJECTS?.sort((a, b) => b.id - a.id).map((item, idx) => (
+            {sortedProjects.map((item, idx) => (
               <div
                 className={`relative flex h-[29rem] w-[80vw] items-center justify-center sm:w-[300px] lg:min-h-[32rem] ${idx < 2 && isMobile && "z-[80]"} ${idx < 3 && !isMobile && "z-[80]"} ${expand && "z-[80]"}`}
                 key={item.id}
@@ -202,8 +194,8 @@ const RecentProjects = () => {
                       ))}
                     </div>
 
-                    <div className="text-left text-xs text-tertiary flex items-center gap-1">
-                      <LuArrowBigRight/> associated with{" "}
+                    <div className="flex items-center gap-1 text-left text-xs text-tertiary">
+                      <LuArrowBigRight /> associated with{" "}
                       <span className="text-blue">
                         {item.category.some((c) => c === "nucast")
                           ? "Nucast Pte. Ltd."
@@ -216,8 +208,8 @@ const RecentProjects = () => {
             ))}
           </motion.div>
           <div
-            onClick={() => setExpand(!expand)}
-            className="mx-auto mt-5 sm:mt-2 flex w-fit cursor-pointer items-center gap-1 rounded-lg border border-tertiary/20 px-4 py-1.5 shadow-deep-inset"
+            onClick={toggleExpand}
+            className="mx-auto mt-5 flex w-fit cursor-pointer items-center gap-1 rounded-lg border border-tertiary/20 px-4 py-1.5 shadow-deep-inset sm:mt-2"
           >
             {expand ? "Show Less" : "Show Full"}
 

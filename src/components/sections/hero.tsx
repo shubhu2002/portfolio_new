@@ -4,40 +4,13 @@ import { Element, Link as ScrollLink } from "react-scroll";
 import Marquee from "react-fast-marquee";
 import { FaDiamond } from "react-icons/fa6";
 
-import AceternityIcon from "../common/aceternity-btn";
+import AceternityIcon from "~/components/common/aceternity-btn";
 import useIsMobile from "~/hooks/useIsMobile";
-
-const TAGS = [
-  "Build",
-  "Develop",
-  "Code",
-  "Deploy",
-  "Debug",
-  "Optimize",
-  "Bundle",
-  "Security",
-  "IDE",
-  "Update",
-  "Server",
-];
+import { ANIMATION_CONFIG, TAGS } from "~/data";
 
 const Hero = () => {
-  const animations = {
-    variants: {
-      visible: { y: 0, opacity: 1, scale: 1 },
-      hidden: { y: 60, opacity: 0, scale: 0.8 },
-    },
-    whileInView: "visible",
-    initial: "hidden",
-    transition: {
-      duration: 1,
-    },
-    viewport: {
-      once: false,
-    },
-  };
-
   const isMobile = useIsMobile();
+
   return (
     <Element name="hero" id="hero">
       <AnimatePresence>
@@ -59,7 +32,8 @@ const Hero = () => {
             className="absolute right-0 top-0 object-contain"
           />
           <motion.div
-            {...animations}
+            {...ANIMATION_CONFIG}
+            layout
             className="relative mt-0 flex w-full flex-col items-center justify-center gap-3 px-[4%] sm:mt-16 sm:px-[6%]"
           >
             <div
@@ -86,25 +60,20 @@ const Hero = () => {
             </p>
           </motion.div>
 
-          <motion.div {...animations}>
-            <ScrollLink
-              activeClass="about"
-              to="about"
-              spy={true}
-              smooth={true}
-              offset={-40}
-              duration={500}
-            >
-              <AceternityIcon className="!rounded-[14px] capitalize">
-                explore more
-              </AceternityIcon>
-            </ScrollLink>
-          </motion.div>
-
-          <motion.div
-            {...animations}
-            className="clipbg mt-12 flex w-[93vw] justify-self-center bg-[#c2cde7] pt-1 sm:mt-28 sm:pb-0.5 sm:pt-2 "
+          <ScrollLink
+            activeClass="about"
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={-40}
+            duration={500}
           >
+            <AceternityIcon className="!rounded-[14px] capitalize">
+              explore more
+            </AceternityIcon>
+          </ScrollLink>
+
+          <div className="clipbg mt-12 flex w-[93vw] justify-self-center bg-[#c2cde7] pt-1 sm:mt-28 sm:pb-0.5 sm:pt-2 ">
             <Marquee
               speed={100}
               gradient={true}
@@ -114,7 +83,7 @@ const Hero = () => {
               <div className="flex w-full grid-flow-col items-center justify-between  text-primary">
                 {TAGS.map((t, i) => (
                   <div key={i} className="mx-2 flex items-center sm:mx-7 ">
-                    <div className="tracking-wider font-thunder-semibold text-lg uppercase sm:text-2xl">
+                    <div className="font-thunder-semibold text-lg uppercase tracking-wider sm:text-2xl">
                       {t}
                     </div>
                     <FaDiamond className="mb-1 ml-3 text-[8px] sm:ml-10 sm:text-sm" />
@@ -122,7 +91,7 @@ const Hero = () => {
                 ))}
               </div>
             </Marquee>
-          </motion.div>
+          </div>
         </main>
       </AnimatePresence>
     </Element>

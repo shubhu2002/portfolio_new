@@ -7,31 +7,17 @@ import { SiReaddotcv } from "react-icons/si";
 import Approach from "../approach";
 import AceternityIcon from "../common/aceternity-btn";
 import TiltEffect from "../animations/tilt-effect";
+import { ANIMATION_CONFIG } from "~/data";
 
 const AboutMe = () => {
   const tiltOptions = { angle: 10, perspective: 1500 };
-
-  const animations = {
-    variants: {
-      visible: { y: 0, opacity: 1, scale: 1 },
-      hidden: { y: 60, opacity: 0, scale: 0.8 },
-    },
-    whileInView: "visible",
-    initial: "hidden",
-    transition: {
-      duration: 1,
-    },
-    viewport: {
-      once: false,
-    },
-  };
 
   return (
     <Element name="about" id="about" className="mb-20 sm:mb-48">
       <AnimatePresence>
         <div className=" px-[4%] sm:px-[6%] ">
           <motion.div
-            {...animations}
+            {...ANIMATION_CONFIG}
             className="mb-10 font-thunder-semibold text-4xl tracking-wider sm:mb-16 md:text-6xl"
           >
             About <span className="uppercase text-blue">me</span>
@@ -39,7 +25,7 @@ const AboutMe = () => {
 
           <div className="my-4 flex h-full w-full  flex-col items-center gap-4 md:h-[390px] md:flex-row">
             <motion.div
-              {...animations}
+              {...ANIMATION_CONFIG}
               className="flex h-full w-full flex-[0.6] flex-col justify-between gap-5 rounded-xl p-px"
             >
               {/** projects */}
@@ -82,7 +68,7 @@ const AboutMe = () => {
                       alt="grid"
                       width={1000}
                       height={1000}
-                      className="absolute inset-0 w-full h-full z-[10]"
+                      className="absolute inset-0 z-[10] h-full w-full"
                     />
                     <div className="relative z-[20] p-5 ">
                       <div className=" text-left">
@@ -118,7 +104,7 @@ const AboutMe = () => {
             {/** Optimization Level */}
             <TiltEffect {...tiltOptions} className="flex-1">
               <motion.div
-                {...animations}
+                {...ANIMATION_CONFIG}
                 className="h-[240px] w-full flex-[1.2] overflow-hidden rounded-xl bg-gradient-to-b from-[rgba(54,55,73,0.43)] via-[rgba(54,55,73,0.49)] to-[rgba(54,55,73,1)] p-px sm:h-full"
               >
                 <div className="relative flex h-full w-full rounded-xl bg-gradient-to-tr from-[#04071D] to-[#0C0E23]">
@@ -157,7 +143,7 @@ const AboutMe = () => {
           </div>
           {/** Aprroach */}
           <motion.div
-            {...animations}
+            {...ANIMATION_CONFIG}
             className="h-full flex-1 overflow-hidden rounded-xl bg-gradient-to-b from-[rgba(54,55,73,0.43)] via-[rgba(54,55,73,0.49)] to-[rgba(54,55,73,1)] p-px sm:h-[390px]"
           >
             <div className="relative flex h-full w-full rounded-xl bg-gradient-to-tr from-[#04071D] to-[#0C0E23] ">

@@ -2,29 +2,15 @@ import { Element } from "react-scroll";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { SKILLSIMAGEPROPS } from "~/data";
+import { ANIMATION_CONFIG, SKILLSIMAGEPROPS } from "~/data";
 
 const Skills = () => {
-  const animations = {
-    variants: {
-      visible: { y: 0, opacity: 1, scale: 1 },
-      hidden: { y: 60, opacity: 0, scale: 0.8 },
-    },
-    whileInView: "visible",
-    initial: "hidden",
-    transition: {
-      duration: 1,
-    },
-    viewport: {
-      once: false,
-    },
-  };
   return (
     <Element name="skills" id="skills" className="my-24">
       <AnimatePresence>
         <div className="px-[4%] sm:px-[6%] ">
           <motion.div
-            {...animations}
+            {...ANIMATION_CONFIG}
             className="font-thunder-semibold text-4xl tracking-wider md:text-6xl"
           >
             My <span className="uppercase text-blue">Tech skills</span>
@@ -64,10 +50,11 @@ const Skills = () => {
               <div className="hide-scroll grid h-full w-full grid-flow-row grid-cols-3 justify-between gap-y-12 sm:grid-cols-6 sm:gap-y-20">
                 {SKILLSIMAGEPROPS.map((img, id) => (
                   <motion.div
-                    initial={{ y: 60, scale: 0.8, opacity: 0 }}
+                    initial={{ y: 30, scale: 0.8, opacity: 0 }}
                     whileInView={{ y: 0, scale: 1, opacity: 1 }}
-                    viewport={{ once: false }}
-                    transition={{ duration: 0.3, delay: 0.05 * id }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: 0.04 * id }}
+                    
                     className="flex flex-col items-center gap-2"
                     key={id}
                   >

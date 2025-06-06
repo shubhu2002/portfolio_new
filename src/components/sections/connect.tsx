@@ -7,22 +7,9 @@ import { IoIosArrowForward } from "react-icons/io";
 
 import AceternityIcon from "../common/aceternity-btn";
 import { AnimatePresence, motion } from "framer-motion";
+import { ANIMATION_CONFIG } from "~/data";
 
 const Connect: React.FC = () => {
-  const animations = {
-    variants: {
-      visible: { y: 0, opacity: 1, scale: 1 },
-      hidden: { y: 60, opacity: 0, scale: 0.8 },
-    },
-    whileInView: "visible",
-    initial: "hidden",
-    transition: {
-      duration: 0.8,
-    },
-    viewport: {
-      once: false,
-    },
-  };
 
   return (
     <Element
@@ -43,7 +30,7 @@ const Connect: React.FC = () => {
           </div>
           <div className=" static left-1/2 top-1/2 mb-12 flex flex-col items-center justify-center sm:absolute sm:mb-0 sm:-translate-x-1/2 sm:-translate-y-1/2">
             <motion.div
-              {...animations}
+              {...ANIMATION_CONFIG}
               className="hidden max-w-[90vw] text-center font-thunder-semibold text-2xl capitalize tracking-wider sm:block sm:max-w-[80vw] sm:text-4xl"
             >
               If you&apos;re ready to{" "}
@@ -56,7 +43,7 @@ const Connect: React.FC = () => {
             </motion.div>
 
             <motion.span
-              {...animations}
+              {...ANIMATION_CONFIG}
               className="block max-w-[90vw] text-center font-thunder-semibold text-2xl capitalize tracking-wider sm:hidden sm:max-w-[80vw] sm:text-4xl"
             >
               If you&apos;re ready to{" "}
@@ -67,7 +54,7 @@ const Connect: React.FC = () => {
             </motion.span>
 
             <motion.a
-              {...animations}
+              {...ANIMATION_CONFIG}
               target="_blank"
               href="mailto:shubhanshusaxena999@gmail.com"
             >
@@ -80,7 +67,7 @@ const Connect: React.FC = () => {
         </div>
 
         <motion.div
-          {...animations}
+          {...ANIMATION_CONFIG}
           className="flex w-full items-center justify-between pt-5 md:px-16"
         >
           <h1 className="text-left text-xs sm:text-center sm:text-sm">

@@ -71,7 +71,7 @@ const Card = ({
       <motion.div
         initial={{ y: 60, scale: 0.8, opacity: 0 }}
         whileInView={{ y: 0, scale: 1, opacity: 1 }}
-        viewport={{ once: false }}
+        viewport={{ once: true }}
         transition={{ duration: 1, delay: 0.1 * id }}
         className="relative flex h-full w-full
        max-w-sm items-start  justify-center overflow-hidden rounded-xl border border-[rgba(105,113,162,0.16)] bg-primary p-4 shadow-deep-inset dark:border-white/[0.2]"
