@@ -4,7 +4,7 @@ export const PROJECTS: ProjectProps[] = [
   {
     id: 1,
     heading: "Library Management",
-    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fc%2B%2B.png?alt=media&token=09a0681f-a030-4d22-9b31-21e53c4bcd64",
+    src: "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/lib_management.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9saWJfbWFuYWdlbWVudC5qcGciLCJpYXQiOjE3NjAxMTgwMDYsImV4cCI6MTc5MTY1NDAwNn0.lj2L6WkyLyTkEnyjlcVHJsdYl7jltyDJUKcY94_DsGs",
     link: "",
     description:
       "The Library Management application in C++ efficiently organizes library resources, enabling tasks such as book borrowing, return management, and cataloging. It incorporates features for user authentication, book search, and inventory management, enhancing library operations and user experience.",
@@ -15,7 +15,7 @@ export const PROJECTS: ProjectProps[] = [
   {
     id: 2,
     heading: "OnSight Cafe : A Lovable Food",
-    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2FonSight.png?alt=media&token=bd45dafd-9ef2-4e8e-9e35-262b32ce721b",
+    src: "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/onSight-Cafe.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9vblNpZ2h0LUNhZmUuanBnIiwiaWF0IjoxNzYwMTE4MDI1LCJleHAiOjE3OTE2NTQwMjV9.-4sSHntelU7IDTf3Ppi_2yQJ2LiHNhbtHDdvZhQCkr4",
     link: "",
     description:
       "OnSight Cafe is a charming food application designed for delightful culinary experiences. Explore a diverse menu and enjoy the convenience of ordering from the comfort of your home or on the go.",
@@ -26,7 +26,7 @@ export const PROJECTS: ProjectProps[] = [
   {
     id: 3,
     heading: "Todo App : Manage Your Tasks",
-    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Ftodo.mp4?alt=media&token=78b0e315-3684-4538-a005-c65054a52be8",
+    src: "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/todo.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy90b2RvLm1wNCIsImlhdCI6MTc2MDExODA0MCwiZXhwIjoxNzkxNjU0MDQwfQ.6sjpBQBsqw5MaKBD7npR2mlr2oTrCJ_pbLi2EklIZGw",
     link: "https://personal-todos.netlify.app/",
     description:
       "A simple and intuitive task management application designed to help you organize and prioritize your daily tasks efficiently.",
@@ -37,7 +37,7 @@ export const PROJECTS: ProjectProps[] = [
   {
     id: 4,
     heading: "DoorDash: Food Delivery Landing Page",
-    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fdoor_dash.mp4?alt=media&token=96308d70-f6c3-4867-a3f3-2156ae5e4c97",
+    src: "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/door_dash.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9kb29yX2Rhc2gubXA0IiwiaWF0IjoxNzYwMTE3OTg4LCJleHAiOjE3OTE2NTM5ODh9._A5FM873Qf_-Rm2NS__QG35g6WXBAZ84IXrZsHH7_ps",
     link: "https://door-dash-food.netlify.app/",
     description:
       "Order your favourite food anytime and we will deliver them right to where you are.We are company dedicated to the distribution of products by deilvery to your home or place the place where you are , with the best qualtiy of delivery.",
@@ -48,7 +48,7 @@ export const PROJECTS: ProjectProps[] = [
   {
     id: 5,
     heading: "Prognosis Finance : UI Page",
-    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fprognosis.mp4?alt=media&token=cfae6661-2673-433d-ae6a-1421b783d701",
+    src: "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/prognosis.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9wcm9nbm9zaXMubXA0IiwiaWF0IjoxNzYwMTE4MDYwLCJleHAiOjE3OTE2NTQwNjB9.EF4nm9p3mNbiDmlrMOJqpozFqTurSqsAJcwHZ_Vr2iw",
     link: "https://prognosis-finance.vercel.app/",
     description:
       "A landing page made through various new techniques of web development.",
@@ -59,7 +59,7 @@ export const PROJECTS: ProjectProps[] = [
   {
     id: 6,
     heading: "AuthenTrace : An Authentication Sysytem",
-    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fauthentrace.mp4?alt=media&token=07b793f4-b901-473d-8c25-bdf31ffe8e70",
+    src: "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/authentrace.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9hdXRoZW50cmFjZS5tcDQiLCJpYXQiOjE3NjAxMTc5NTMsImV4cCI6MTc5MTY1Mzk1M30.akOCcLBNB39U0--iQMP6-b1QOzawgy2xgEf-JpjpJdo",
     link: "https://authentrace.vercel.app/",
     description:
       "A next-auth based authentication system , which is very secure and reliable , easy to access. In which user credentials are stored in database with hashing password",
@@ -150,7 +150,7 @@ export const PROJECTS: ProjectProps[] = [
   {
     id: 11,
     heading: "LV-Research",
-    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Flv_research.mp4?alt=media&token=d6a277e7-00ff-4b4a-8c74-f835fafeed53",
+    src: "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/lv_research.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9sdl9yZXNlYXJjaC5tcDQiLCJpYXQiOjE3NjAxMTgxNzQsImV4cCI6MTc5MTY1NDE3NH0.U7jTlUCUVXiBbyBvBKiswSbVzNRjl-ckv4YtzroBrIs",
     link: "https://lv-research-rho.vercel.app/",
     description:
       "The Gateway to On-chain Insights curated in a Decentralized Manner.",
@@ -235,7 +235,7 @@ export const PROJECTS: ProjectProps[] = [
   {
     id: 16,
     heading: "Sova Lounge Da Nang",
-    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fsova.mp4?alt=media&token=dc29abda-ead3-41a2-a346-166a78fc9ccf",
+    src: "",
     link: "https://sova-v2.vercel.app/",
     description:
       "A landing page for cafe opened in Vietnam , Book Your Table and Enjoy Delicious Food & Drinks.",
@@ -286,7 +286,7 @@ export const PROJECTS: ProjectProps[] = [
   {
     id: 19,
     heading: "Nucast | Subscription",
-    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fnu_subscription.mp4?alt=media&token=a7185637-19ff-40cc-9084-3ad60c51dd85",
+    src: "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/nu_subscription.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9udV9zdWJzY3JpcHRpb24ubXA0IiwiaWF0IjoxNzYwMTE4MTI1LCJleHAiOjE3OTE2NTQxMjV9.UjC_yHl8Pb2kGIXa27so8JMHWgfJqZSl3YKDOpsPIMk",
     link: "https://subscription.nucast.io/",
     description:
       "Nucast subscriptions empowers NFT, gaming, and digital media projects with automated payments via smart contract. Unlock new revenue streams, enhance user experiences, and attract liquidity on Cardano.",

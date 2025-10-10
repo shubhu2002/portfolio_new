@@ -15,11 +15,11 @@ const Connect: React.FC = () => {
     <Element
       id="connect"
       name="connect"
-      className="relative mb-6 mt-12 px-[4%] sm:px-[6%] "
+        className="relative pb-6  bg-[#fff4f4]"
     >
       <AnimatePresence>
         <div className="relative z-[99] h-full w-full overflow-hidden  ">
-          <div className=" h-auto w-full">
+          <div className="h-auto w-full">
             <Image
               src={"/bg-line.svg"}
               alt="image"
@@ -68,10 +68,10 @@ const Connect: React.FC = () => {
 
         <motion.div
           {...ANIMATION_CONFIG}
-          className="flex w-full items-center justify-between pt-5 md:px-16"
+          className="flex w-full items-center justify-between pt-5 md:px-10"
         >
           <h1 className="text-left text-xs sm:text-center sm:text-sm">
-            developed by{" "}
+            developed & designed by{" "}
             <span className="text-blue">
               <span className="text-xs sm:text-sm">@</span>shubhanshu saxena
             </span>

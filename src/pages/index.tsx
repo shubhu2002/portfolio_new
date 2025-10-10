@@ -14,9 +14,9 @@ export default function Home() {
     <Layout>
       <Hero />
       <AboutMe />
-      <Works />
+       <Works />
       <Skills/>
-      <Connect />
+      <Connect /> 
     </Layout>
   );
 }

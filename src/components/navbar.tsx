@@ -5,8 +5,8 @@ import useIsMobile from "~/hooks/useIsMobile";
 const Navbar: React.FC = () => {
   return (
     <div className="fixed left-0 right-0 top-3 z-[9999] w-full p-1 px-4 md:px-8 ">
-      <div className="flex h-full items-center justify-center justify-self-center rounded-xl p-5 py-3.5 font-helvetica-light uppercase tracking-widest  text-tertiary backdrop-blur-lg md:px-6">
-        <div className="flex items-center gap-2.5 text-sm sm:gap-2 md:gap-8 md:text-base">
+      <div className="flex h-full items-center justify-center justify-self-center rounded-xl p-5 py-3.5 font-helvetica-light capitalize tracking-widest  text-tertiary backdrop-blur-lg md:px-6">
+        <div className="flex items-center gap-2.5 text-sm sm:gap-2 md:gap-8 md:text-base font-comfortaa tracking-[0.0005em] font-semibold text-black">
           <Links />
         </div>
       </div>
@@ -33,63 +33,63 @@ const Links = () => {
     <>
       <ScrollLink
         activeClass="hero"
-        activeStyle={{ color: "#51baff" }}
+        activeStyle={{ color: "#462916" }}
         to="hero"
         spy={true}
         smooth={true}
         offset={-225}
         duration={500}
-        className="cursor-pointer transition-colors duration-300 hover:text-blue"
+        className="cursor-pointer transition-colors duration-300 hover:text-[#462916]"
       >
         Home
       </ScrollLink>
       <ScrollLink
         activeClass="about"
-        activeStyle={{ color: "#51baff" }}
+        activeStyle={{ color: "#462916" }}
         to="about"
         spy={true}
         smooth={true}
         offset={-75}
         duration={500}
-        className="cursor-pointer transition-colors duration-300 hover:text-blue"
+        className="cursor-pointer transition-colors duration-300 hover:text-[#462916]"
       >
         About
       </ScrollLink>
 
       <ScrollLink
         activeClass="works"
-        activeStyle={{ color: "#51baff" }}
+        activeStyle={{ color: "#462916" }}
         to="works"
         spy={true}
         smooth={true}
         offset={-75}
         duration={500}
-        className="cursor-pointer transition-colors duration-300 hover:text-blue"
+        className="cursor-pointer transition-colors duration-300 hover:text-[#462916]"
       >
         Works
       </ScrollLink>
       <ScrollLink
         activeClass="skills"
-        activeStyle={{ color: "#51baff" }}
+        activeStyle={{ color: "#462916" }}
         to="skills"
         spy={!isAtBottom}
         smooth={true}
         offset={-75}
         spyThrottle={700}
         duration={500}
-        className="cursor-pointer transition-colors duration-300 hover:text-blue"
+        className="cursor-pointer transition-colors duration-300 hover:text-[#462916]"
       >
         Skills
       </ScrollLink>
       <ScrollLink
         activeClass="connect"
-        activeStyle={{ color: "#51baff" }}
+        activeStyle={{ color: "#462916" }}
         to="connect"
         spy={true}
         smooth={true}
         offset={isMobile ? -520 : -280}
         duration={500}
-        className="cursor-pointer transition-colors duration-300 hover:text-blue"
+        className="cursor-pointer transition-colors duration-300 hover:text-[#462916]"
       >
         Connect
       </ScrollLink>

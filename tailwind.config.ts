@@ -21,6 +21,10 @@ export default {
         "neue-light": ["neue-light"],
         "neue-regular": ["neue-regular"],
         "neue-ultra-bold": ["neue-ultra-bold"],
+
+        cinzel: ["var(--font-cinzel)"],
+        pacifico: ["var(--font-pacifico)"],
+        licorice: ["var(--font-licorice)"],
       },
       colors: {
         primary: "#020013",

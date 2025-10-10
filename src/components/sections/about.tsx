@@ -1,166 +1,140 @@
-import Link from "next/link";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Element } from "react-scroll";
 import { AnimatePresence, motion } from "framer-motion";
-import { SiReaddotcv } from "react-icons/si";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
-import Approach from "../approach";
-import AceternityIcon from "../common/aceternity-btn";
 import TiltEffect from "../animations/tilt-effect";
-import { ANIMATION_CONFIG } from "~/data";
+import { SECTION_DATA } from "~/data";
 
-const AboutMe = () => {
+const New = () => {
+  const [section, setSection] = useState<"Engineering_Philosophy" | "Approach">(
+    "Engineering_Philosophy",
+  );
+
   const tiltOptions = { angle: 10, perspective: 1500 };
 
+  // Animation variants
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
+    exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSection((prev) =>
+        prev === "Engineering_Philosophy"
+          ? "Approach"
+          : "Engineering_Philosophy",
+      );
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <Element name="about" id="about" className="mb-20 sm:mb-48">
+    <Element
+      name="about"
+      id="about"
+      className="bg-[#fff] py-20 text-left sm:py-16"
+    >
       <AnimatePresence>
-        <div className=" px-[4%] sm:px-[6%] ">
-          <motion.div
-            {...ANIMATION_CONFIG}
-            className="mb-10 font-thunder-semibold text-4xl tracking-wider sm:mb-16 md:text-6xl"
-          >
-            About <span className="uppercase text-blue">me</span>
-          </motion.div>
-
-          <div className="my-4 flex h-full w-full  flex-col items-center gap-4 md:h-[390px] md:flex-row">
-            <motion.div
-              {...ANIMATION_CONFIG}
-              className="flex h-full w-full flex-[0.6] flex-col justify-between gap-5 rounded-xl p-px"
-            >
-              {/** projects */}
-              <TiltEffect {...tiltOptions} className="flex-1">
-                <div className="h-[240px] overflow-hidden rounded-xl bg-gradient-to-b from-[rgba(54,55,73,0.43)] via-[rgba(54,55,73,0.49)] to-[rgba(54,55,73,1)] p-px sm:h-full">
-                  <div className="relative h-full w-full rounded-xl bg-gradient-to-tr from-[#04071D] to-[#0C0E23]">
-                    <Image
-                      src={"/assets/skeleton.svg"}
-                      alt="grid"
-                      width={100}
-                      height={100}
-                      className="absolute -bottom-3 right-0 z-[100] h-[80%] w-[80%] sm:-bottom-10"
-                    />
-                    <Image
-                      src={"/assets/grid-bg.svg"}
-                      alt="grid"
-                      width={100}
-                      height={100}
-                      className="absolute inset-0 z-[100] h-[100%] w-[100%]"
-                    />
-                    <div className="p-5">
-                      <div className=" text-left">
-                        <div className="mb-1 text-nowrap font-thunder-semibold text-xl uppercase tracking-widest text-tertiary">
-                          PROJECTS
-                        </div>
-                        <div className="text-lg ">
-                          Worked on more than 20+ Projects !
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </TiltEffect>
-              {/** experience */}
-              <TiltEffect {...tiltOptions} className="flex-1">
-                <div className="h-[240px] overflow-hidden rounded-xl bg-gradient-to-b from-[rgba(54,55,73,0.43)] via-[rgba(54,55,73,0.49)] to-[rgba(54,55,73,1)] p-px sm:h-full">
-                  <div className="relative h-full w-full rounded-xl bg-gradient-to-tr from-[#04071D] to-[#0C0E23]">
-                    <Image
-                      src={"/assets/gradient.svg"}
-                      alt="grid"
-                      width={1000}
-                      height={1000}
-                      className="absolute inset-0 z-[10] h-full w-full"
-                    />
-                    <div className="relative z-[20] p-5 ">
-                      <div className=" text-left">
-                        <div className="mb-1 text-nowrap font-thunder-semibold text-xl uppercase tracking-widest text-tertiary">
-                          EXPERIENCE
-                        </div>
-                        <div className="block text-lg md:hidden ">
-                          1+ Years of Professional Experience as SDE at Nucast
-                          Pte. Ltd.
-                        </div>
-                        <div className="hidden break-words text-lg md:block">
-                          1+ Years of Professional Experience as
-                        </div>
-                        <div className="hidden break-words text-lg md:block">
-                          SDE at Nucast Pte. Ltd.
-                        </div>
-                      </div>
-                      <Link
-                        href="https://drive.google.com/file/d/1aob5c30w7epk3-gYsDg5n7nGYdhgdgU4/view?usp=sharing"
-                        target="_blank"
-                        className="flex justify-self-start"
-                      >
-                        <AceternityIcon className="mt-2 flex items-center !text-[12px] leading-[18px]">
-                          Resume <SiReaddotcv className="ml-2" />
-                        </AceternityIcon>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </TiltEffect>
-            </motion.div>
-
-            {/** Optimization Level */}
-            <TiltEffect {...tiltOptions} className="flex-1">
-              <motion.div
-                {...ANIMATION_CONFIG}
-                className="h-[240px] w-full flex-[1.2] overflow-hidden rounded-xl bg-gradient-to-b from-[rgba(54,55,73,0.43)] via-[rgba(54,55,73,0.49)] to-[rgba(54,55,73,1)] p-px sm:h-full"
+        <div className="px-[4%] sm:px-[6%] ">
+          <div className="flex w-full items-end justify-between">
+            <div className="">
+              <div
+                className="mb-3 flex w-fit items-center gap-1 rounded-[14px] border border-black/30 bg-[#462916] px-3 py-0.5 pt-1 text-sm text-[#fff5f4]"
+                h-auto
               >
-                <div className="relative flex h-full w-full rounded-xl bg-gradient-to-tr from-[#04071D] to-[#0C0E23]">
-                  <Image
-                    src={"/assets/grid-bg.svg"}
-                    alt="grid"
-                    width={1000}
-                    height={1000}
-                    className="absolute inset-0 z-[100]"
-                  />
-                  <div className="relative flex h-full p-4 sm:items-center sm:p-0">
-                    <div className="absolute flex flex-col justify-center text-left sm:left-[calc(100%+32px)] ">
-                      <span className="mb-3 text-nowrap font-thunder-semibold text-xl uppercase tracking-widest text-tertiary">
-                        Optimization Level
-                      </span>
-                      <span className="text-nowrap text-lg sm:text-2xl">
-                        Every byte optimized,
-                      </span>
-                      <span className="text-nowrap text-lg sm:text-2xl">
-                        every function pure
-                      </span>
-                    </div>
-                  </div>
-                  <div className="relative h-full w-full ">
-                    <Image
-                      src={"/assets/code.svg"}
-                      alt="code"
-                      width={1000}
-                      height={1000}
-                      className="absolute bottom-0 right-0 w-60 md:w-[60%]"
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            </TiltEffect>
-          </div>
-          {/** Aprroach */}
-          <motion.div
-            {...ANIMATION_CONFIG}
-            className="h-full flex-1 overflow-hidden rounded-xl bg-gradient-to-b from-[rgba(54,55,73,0.43)] via-[rgba(54,55,73,0.49)] to-[rgba(54,55,73,1)] p-px sm:h-[390px]"
-          >
-            <div className="relative flex h-full w-full rounded-xl bg-gradient-to-tr from-[#04071D] to-[#0C0E23] ">
-              <Image
-                src={"/assets/plus-grid.svg"}
-                alt="code"
-                width={1000}
-                height={1000}
-                className="absolute -left-1  -top-5 h-[60%] w-full object-cover"
-              />
-              <Approach />
+                About Me
+              </div>
+
+              <AnimatePresence mode="wait">
+                <motion.h1
+                  key={SECTION_DATA[section].title}
+                  variants={fadeUp}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className="font-cinzel max-w-[500px] text-left text-5xl font-medium"
+                >
+                  {SECTION_DATA[section].title}
+                </motion.h1>
+              </AnimatePresence>
             </div>
-          </motion.div>
+
+            <motion.div className="mb-1 flex h-full max-w-[700px] items-center gap-8 font-comfortaa font-normal leading-snug">
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={SECTION_DATA[section].description}
+                  variants={fadeUp}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                >
+                  {SECTION_DATA[section].description}
+                </motion.p>
+              </AnimatePresence>
+
+              <div className="flex h-full w-[200px] flex-col items-end gap-3 text-3xl">
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() =>
+                    section === "Approach"
+                      ? setSection("Engineering_Philosophy")
+                      : setSection("Approach")
+                  }
+                  className={`cursor-pointer rounded-full bg-white p-1.5 text-[#462916]`}
+                >
+                  <MdKeyboardDoubleArrowRight
+                    size={24}
+                    className={`${section !== "Engineering_Philosophy" ? "-scale-x-[1] " : "scale-x-[1]"}`}
+                  />
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="my-9 mb-16 w-full border-[0.5px] border-dashed border-black/30" />
+
+          <div className="flex items-center justify-between gap-8 ">
+            {SECTION_DATA[section].cardsData.map((card) => (
+              <TiltEffect
+                key={card.id}
+                {...tiltOptions}
+                className={`h-[290px] w-[420px] rounded-[18px] border-[0.5px] border-[#462916]/30 bg-[#fff5f4] p-4 px-6 ${card.id === 2 && "border-none !bg-[#462916] text-white"}`}
+              >
+                <div>
+                  <Image
+                    width={999}
+                    height={999}
+                    alt="img"
+                    src={card.card_img}
+                    className="w-12"
+                  />
+
+                  <h1 className="font-comfortaa py-3 text-2xl mt-2 tracking-wider">
+                    {card.card_title}
+                  </h1>
+                  <p
+                    className={`font-comfortaa text-base font-light leading-snug tracking-wider`}
+                  >
+                    {card.card_description}
+                  </p>
+                </div>
+              </TiltEffect>
+            ))}
+          </div>
         </div>
       </AnimatePresence>
     </Element>
   );
 };
 
-export default AboutMe;
+export default New;
