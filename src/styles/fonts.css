@@ -41,44 +41,6 @@
 
 
 
-/* offbit */
-@font-face {
-    font-family: 'offbit-regular';
-    src: url('/fonts/offbit-trial/OffBitTrial-Regular.otf') format('opentype');
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: 'offbit-101';
-    src: url('/fonts/offbit-trial/OffBitTrial-101.otf') format('opentype');
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: 'offbit-101-bold';
-    src: url('/fonts/offbit-trial/OffBitTrial-101Bold.otf') format('opentype');
-    font-weight: 800;
-}
-
-@font-face {
-    font-family: 'offbit-bold';
-    src: url('/fonts/offbit-trial/OffBitTrial-Bold.otf') format('opentype');
-    font-weight: 800;
-}
-
-@font-face {
-    font-family: 'offbit-dot';
-    src: url('/fonts/offbit-trial/OffBitTrial-Dot.otf') format('opentype');
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: 'offbit-dot-bold';
-    src: url('/fonts/offbit-trial/OffBitTrial-DotBold.otf') format('opentype');
-    font-weight: 800;
-}
-
-
 /* helvetica  */
 @font-face {
     font-family: 'helvetica-light';

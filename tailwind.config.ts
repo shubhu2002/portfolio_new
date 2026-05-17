@@ -1,14 +1,10 @@
 import { type Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
   content: ["./src/**/*.tsx"],
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-        comfortaa: ["var(--font-comfortaa)"],
-
         "thunder-bold": ["thunder-bold"],
         "thunder-extrabold": ["thunder-extrabold"],
         "thunder-semibold": ["thunder-semibold"],
@@ -21,22 +17,17 @@ export default {
         "neue-light": ["neue-light"],
         "neue-regular": ["neue-regular"],
         "neue-ultra-bold": ["neue-ultra-bold"],
-
-        cinzel: ["var(--font-cinzel)"],
-        pacifico: ["var(--font-pacifico)"],
-        licorice: ["var(--font-licorice)"],
       },
       colors: {
-        primary: "#020013",
+        primary: "#000000",
         secondary: "white",
-        tertiary: "#c2cde7",
-        blue: "#51baff",
-      },
-      boxShadow: {
-        "deep-inset": "0px 0px 8px 0.82px #FFFFFF1F inset",
+        accent: {
+          red: "#E63946",
+          purple: "#7B2FBE",
+        },
+        muted: "#666666",
       },
     },
   },
   plugins: [],
-  darkMode: "class",
 } satisfies Config;

@@ -3,8 +3,10 @@ import { ProjectProps } from "~/types";
 export const PROJECTS: ProjectProps[] = [
   {
     id: 1,
+    image:
+      "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/lib_management.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9saWJfbWFuYWdlbWVudC5qcGciLCJpYXQiOjE3NjAxMTgwMDYsImV4cCI6MTc5MTY1NDAwNn0.lj2L6WkyLyTkEnyjlcVHJsdYl7jltyDJUKcY94_DsGs",
     heading: "Library Management",
-    src: "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/lib_management.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9saWJfbWFuYWdlbWVudC5qcGciLCJpYXQiOjE3NjAxMTgwMDYsImV4cCI6MTc5MTY1NDAwNn0.lj2L6WkyLyTkEnyjlcVHJsdYl7jltyDJUKcY94_DsGs",
+    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fc%2B%2B.png?alt=media&token=09a0681f-a030-4d22-9b31-21e53c4bcd64",
     link: "",
     description:
       "The Library Management application in C++ efficiently organizes library resources, enabling tasks such as book borrowing, return management, and cataloging. It incorporates features for user authentication, book search, and inventory management, enhancing library operations and user experience.",
@@ -14,8 +16,10 @@ export const PROJECTS: ProjectProps[] = [
   },
   {
     id: 2,
+    image:
+      "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/onSight-Cafe.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9vblNpZ2h0LUNhZmUuanBnIiwiaWF0IjoxNzYwMTE4MDI1LCJleHAiOjE3OTE2NTQwMjV9.-4sSHntelU7IDTf3Ppi_2yQJ2LiHNhbtHDdvZhQCkr4",
     heading: "OnSight Cafe : A Lovable Food",
-    src: "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/onSight-Cafe.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9vblNpZ2h0LUNhZmUuanBnIiwiaWF0IjoxNzYwMTE4MDI1LCJleHAiOjE3OTE2NTQwMjV9.-4sSHntelU7IDTf3Ppi_2yQJ2LiHNhbtHDdvZhQCkr4",
+    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2FonSight.png?alt=media&token=bd45dafd-9ef2-4e8e-9e35-262b32ce721b",
     link: "",
     description:
       "OnSight Cafe is a charming food application designed for delightful culinary experiences. Explore a diverse menu and enjoy the convenience of ordering from the comfort of your home or on the go.",
@@ -25,8 +29,10 @@ export const PROJECTS: ProjectProps[] = [
   },
   {
     id: 3,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/todo.png",
     heading: "Todo App : Manage Your Tasks",
-    src: "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/todo.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy90b2RvLm1wNCIsImlhdCI6MTc2MDExODA0MCwiZXhwIjoxNzkxNjU0MDQwfQ.6sjpBQBsqw5MaKBD7npR2mlr2oTrCJ_pbLi2EklIZGw",
+    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Ftodo.mp4?alt=media&token=78b0e315-3684-4538-a005-c65054a52be8",
     link: "https://personal-todos.netlify.app/",
     description:
       "A simple and intuitive task management application designed to help you organize and prioritize your daily tasks efficiently.",
@@ -36,8 +42,10 @@ export const PROJECTS: ProjectProps[] = [
   },
   {
     id: 4,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/doordash.png",
     heading: "DoorDash: Food Delivery Landing Page",
-    src: "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/door_dash.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9kb29yX2Rhc2gubXA0IiwiaWF0IjoxNzYwMTE3OTg4LCJleHAiOjE3OTE2NTM5ODh9._A5FM873Qf_-Rm2NS__QG35g6WXBAZ84IXrZsHH7_ps",
+    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fdoor_dash.mp4?alt=media&token=96308d70-f6c3-4867-a3f3-2156ae5e4c97",
     link: "https://door-dash-food.netlify.app/",
     description:
       "Order your favourite food anytime and we will deliver them right to where you are.We are company dedicated to the distribution of products by deilvery to your home or place the place where you are , with the best qualtiy of delivery.",
@@ -47,8 +55,10 @@ export const PROJECTS: ProjectProps[] = [
   },
   {
     id: 5,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/prognosis.png",
     heading: "Prognosis Finance : UI Page",
-    src: "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/prognosis.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9wcm9nbm9zaXMubXA0IiwiaWF0IjoxNzYwMTE4MDYwLCJleHAiOjE3OTE2NTQwNjB9.EF4nm9p3mNbiDmlrMOJqpozFqTurSqsAJcwHZ_Vr2iw",
+    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fprognosis.mp4?alt=media&token=cfae6661-2673-433d-ae6a-1421b783d701",
     link: "https://prognosis-finance.vercel.app/",
     description:
       "A landing page made through various new techniques of web development.",
@@ -58,8 +68,10 @@ export const PROJECTS: ProjectProps[] = [
   },
   {
     id: 6,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/authentrace.png",
     heading: "AuthenTrace : An Authentication Sysytem",
-    src: "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/authentrace.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9hdXRoZW50cmFjZS5tcDQiLCJpYXQiOjE3NjAxMTc5NTMsImV4cCI6MTc5MTY1Mzk1M30.akOCcLBNB39U0--iQMP6-b1QOzawgy2xgEf-JpjpJdo",
+    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fauthentrace.mp4?alt=media&token=07b793f4-b901-473d-8c25-bdf31ffe8e70",
     link: "https://authentrace.vercel.app/",
     description:
       "A next-auth based authentication system , which is very secure and reliable , easy to access. In which user credentials are stored in database with hashing password",
@@ -76,6 +88,8 @@ export const PROJECTS: ProjectProps[] = [
   },
   {
     id: 7,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/old_portfolio.png",
     heading: "Old Personal Portfolio",
     src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fportfolio_new.mp4?alt=media&token=ffda7bcc-ec09-4d69-976d-22d2e4ad5e62",
     link: "https://shubhu.vercel.app/",
@@ -93,6 +107,8 @@ export const PROJECTS: ProjectProps[] = [
   },
   {
     id: 8,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/tourice.png",
     heading: "Tourice : A Tours & Travels Management",
     src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Ftourice.mp4?alt=media&token=c0a85872-e141-4ad0-baa4-632030125c7d",
     link: "https://tourice-frontend-ts.vercel.app/",
@@ -114,6 +130,8 @@ export const PROJECTS: ProjectProps[] = [
   // nucast
   {
     id: 9,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/nu_livestream.png",
     heading: "Livestream | Nucast",
     src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Flive_nucast.mp4?alt=media&token=1090dbf1-51c6-41c0-b7fa-6c61a46b64ed",
     link: "https://live.nucast.io/",
@@ -132,6 +150,8 @@ export const PROJECTS: ProjectProps[] = [
   },
   {
     id: 10,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/drepwatch.png",
     heading: "DrepWatch",
     src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fdrep.mp4?alt=media&token=756312e4-a859-4150-9533-2af24f6321a2",
     link: "https://drep-client.vercel.app/",
@@ -149,9 +169,11 @@ export const PROJECTS: ProjectProps[] = [
   },
   {
     id: 11,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/lv_research.png",
     heading: "LV-Research",
-    src: "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/lv_research.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9sdl9yZXNlYXJjaC5tcDQiLCJpYXQiOjE3NjAxMTgxNzQsImV4cCI6MTc5MTY1NDE3NH0.U7jTlUCUVXiBbyBvBKiswSbVzNRjl-ckv4YtzroBrIs",
-    link: "https://lv-research-rho.vercel.app/",
+    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Flv_research.mp4?alt=media&token=d6a277e7-00ff-4b4a-8c74-f835fafeed53",
+    link: "https://lv-research-l8ne.vercel.app",
     description:
       "The Gateway to On-chain Insights curated in a Decentralized Manner.",
     github_link: "",
@@ -166,6 +188,8 @@ export const PROJECTS: ProjectProps[] = [
   },
   {
     id: 12,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/trivolvetech.png",
     heading: "Trivolve Tech",
     src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Ftrivolve.mp4?alt=media&token=daa9c4d8-2e2d-405f-856e-2cf7181db0fa",
     link: "https://trivolvetech.com/",
@@ -177,6 +201,8 @@ export const PROJECTS: ProjectProps[] = [
   },
   {
     id: 13,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/staging_syncai.png",
     heading: "Sync AI Network",
     src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fsync_staging.mp4?alt=media&token=46b17662-a535-4dc6-8dd8-24b2c0d09536",
     link: "https://staging.syncai.network/",
@@ -194,10 +220,12 @@ export const PROJECTS: ProjectProps[] = [
     category: ["all", "nucast"],
   },
   {
-    id: 13,
-    heading: "CardanoCodex 2024",
+    id: 14,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/indiacodex.png",
+    heading: "IndiaCodex 2026",
     src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fcardano-codex.mp4?alt=media&token=19dc2772-2f11-469b-b092-ffe6cd0b6318",
-    link: "https://cardano-codex23.vercel.app/",
+    link: "https://indiacodex.com/",
     description:
       "A digital hackathon powered by Cardano & moderated by Nucast Labs to increase awareness, engage web3 developers, and promote Cardano in India.",
     github_link: "",
@@ -205,7 +233,9 @@ export const PROJECTS: ProjectProps[] = [
     category: ["all", "nucast"],
   },
   {
-    id: 14,
+    id: 15,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/network_syncai.png",
     heading: "Sync AD",
     src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fsync_landing.mp4?alt=media&token=3e0f9e3b-23be-483d-8cb4-f2f70ee12eb1",
     link: "https://www.syncai.network/",
@@ -215,7 +245,9 @@ export const PROJECTS: ProjectProps[] = [
     category: ["all", "nucast"],
   },
   {
-    id: 15,
+    id: 16,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/drep_syncai.png",
     heading: "Sync AI Dreps",
     src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fsync_ai.mp4?alt=media&token=119caba3-b167-4e46-84eb-58b839f18218",
     link: "https://drep.syncai.network/",
@@ -233,10 +265,12 @@ export const PROJECTS: ProjectProps[] = [
     category: ["all", "nucast"],
   },
   {
-    id: 16,
+    id: 17,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/sova.png",
     heading: "Sova Lounge Da Nang",
-    src: "",
-    link: "https://sova-v2.vercel.app/",
+    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fsova.mp4?alt=media&token=dc29abda-ead3-41a2-a346-166a78fc9ccf",
+    link: "https://sova.social",
     description:
       "A landing page for cafe opened in Vietnam , Book Your Table and Enjoy Delicious Food & Drinks.",
     github_link: "",
@@ -250,7 +284,9 @@ export const PROJECTS: ProjectProps[] = [
     category: ["all", "nucast"],
   },
   {
-    id: 17,
+    id: 18,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/nu_nuauth.png",
     heading: "NuAuth",
     src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2FNu-Auth.mp4?alt=media&token=0e0bb0f3-473a-4c2a-aa49-1de70f1a2ce6",
     link: "https://nuauth.nucast.io/",
@@ -268,7 +304,9 @@ export const PROJECTS: ProjectProps[] = [
     category: ["all", "nucast"],
   },
   {
-    id: 18,
+    id: 19,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/crypto_rwa.png",
     heading: "Crypto Dashborad",
     src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Frwa.mp4?alt=media&token=2f669ffb-1846-4503-8764-2ffc9bf87995",
     link: "https://rwa-lending-app-ts.vercel.app/deal/1",
@@ -284,9 +322,11 @@ export const PROJECTS: ProjectProps[] = [
     category: ["all", "nucast"],
   },
   {
-    id: 19,
+    id: 20,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/nu_subscription.png",
     heading: "Nucast | Subscription",
-    src: "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/nu_subscription.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9udV9zdWJzY3JpcHRpb24ubXA0IiwiaWF0IjoxNzYwMTE4MTI1LCJleHAiOjE3OTE2NTQxMjV9.UjC_yHl8Pb2kGIXa27so8JMHWgfJqZSl3YKDOpsPIMk",
+    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fnu_subscription.mp4?alt=media&token=a7185637-19ff-40cc-9084-3ad60c51dd85",
     link: "https://subscription.nucast.io/",
     description:
       "Nucast subscriptions empowers NFT, gaming, and digital media projects with automated payments via smart contract. Unlock new revenue streams, enhance user experiences, and attract liquidity on Cardano.",
@@ -304,6 +344,8 @@ export const PROJECTS: ProjectProps[] = [
 
   {
     id: 21,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/better_web3_light.png",
     heading: "Better Web3",
     src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fbetter-web3.mp4?alt=media&token=12a97cb3-5b82-4f4b-947b-937e8d2dbf51",
     link: "https://better-we3.vercel.app/",
@@ -318,9 +360,22 @@ export const PROJECTS: ProjectProps[] = [
       "Web3auth",
       "Supabase",
       "Prisma",
-      "i18next/next-intl",
       "nucast/gasless",
     ],
+    category: ["all", "nucast"],
+  },
+  {
+    id: 22,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/ascend.png",
+    heading: "Ascend | Prediction Markets",
+    src: "",
+    link: "https://ascend.market",
+    link2: "https://testnet.ascend.market",
+    description:
+      "Trade on prediction markets with leverage. Bet on sports, politics, and more with ZK-settled outcomes.",
+    github_link: "",
+    tech_used: ["Next JS", "Typescript", "Mesh JS", "Express JS", "Go", "Deno", "Supabase", "Kafka"],
     category: ["all", "nucast"],
   },
 ];

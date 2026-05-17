@@ -1,136 +1,174 @@
 import { Element } from "react-scroll";
-import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
 
-import { ANIMATION_CONFIG, SKILLSIMAGEPROPS } from "~/data";
+const SKILL_GROUPS = [
+  {
+    title: "Frontend",
+    smoke: "smoke-gradient-3",
+    skills: ["Next.js", "React", "TypeScript", "JavaScript", "Tailwind CSS", "SASS", "Framer Motion", "Three.js"],
+    doodle: (
+      <>
+        {/* Browser window */}
+        <svg className="absolute right-6 top-6 opacity-[0.07]" width="120" height="90" viewBox="0 0 120 90" fill="none">
+          <rect x="1" y="1" width="118" height="88" rx="8" stroke="white" strokeWidth="1.5" />
+          <line x1="1" y1="22" x2="119" y2="22" stroke="white" strokeWidth="1" />
+          <circle cx="14" cy="12" r="4" stroke="white" strokeWidth="1" />
+          <circle cx="28" cy="12" r="4" stroke="white" strokeWidth="1" />
+          <circle cx="42" cy="12" r="4" stroke="white" strokeWidth="1" />
+          <rect x="14" y="32" width="50" height="6" rx="3" fill="white" />
+          <rect x="14" y="46" width="92" height="4" rx="2" fill="white" opacity="0.5" />
+          <rect x="14" y="56" width="72" height="4" rx="2" fill="white" opacity="0.3" />
+          <rect x="14" y="66" width="82" height="4" rx="2" fill="white" opacity="0.4" />
+        </svg>
+        {/* React-like orbit */}
+        <svg className="skill-spin absolute bottom-8 right-10 opacity-[0.06]" width="80" height="80" viewBox="0 0 80 80" fill="none">
+          <ellipse cx="40" cy="40" rx="35" ry="14" stroke="white" strokeWidth="1" />
+          <ellipse cx="40" cy="40" rx="35" ry="14" stroke="white" strokeWidth="1" transform="rotate(60 40 40)" />
+          <ellipse cx="40" cy="40" rx="35" ry="14" stroke="white" strokeWidth="1" transform="rotate(120 40 40)" />
+          <circle cx="40" cy="40" r="5" fill="white" />
+        </svg>
+      </>
+    ),
+  },
+  {
+    title: "Backend",
+    smoke: "smoke-gradient-1",
+    skills: ["Node.js", "Express.js", "Supabase", "MongoDB", "MySQL", "Firebase", "Appwrite", "Python", "Kafka", "AWS", "Docker", "Redis"],
+    doodle: (
+      <>
+        {/* Server rack */}
+        <svg className="absolute right-6 top-6 opacity-[0.07]" width="100" height="100" viewBox="0 0 100 100" fill="none">
+          <rect x="10" y="5" width="80" height="25" rx="4" stroke="white" strokeWidth="1.5" />
+          <rect x="10" y="37" width="80" height="25" rx="4" stroke="white" strokeWidth="1.5" />
+          <rect x="10" y="69" width="80" height="25" rx="4" stroke="white" strokeWidth="1.5" />
+          <circle cx="25" cy="17" r="3" fill="white" />
+          <circle cx="25" cy="49" r="3" fill="white" />
+          <circle cx="25" cy="81" r="3" fill="white" />
+          <line x1="35" y1="17" x2="75" y2="17" stroke="white" strokeWidth="1" />
+          <line x1="35" y1="49" x2="75" y2="49" stroke="white" strokeWidth="1" />
+          <line x1="35" y1="81" x2="75" y2="81" stroke="white" strokeWidth="1" />
+        </svg>
+        {/* Database cylinder */}
+        <svg className="skill-float absolute bottom-8 right-12 opacity-[0.06]" width="60" height="70" viewBox="0 0 60 70" fill="none">
+          <ellipse cx="30" cy="12" rx="25" ry="10" stroke="white" strokeWidth="1.5" />
+          <line x1="5" y1="12" x2="5" y2="58" stroke="white" strokeWidth="1.5" />
+          <line x1="55" y1="12" x2="55" y2="58" stroke="white" strokeWidth="1.5" />
+          <ellipse cx="30" cy="58" rx="25" ry="10" stroke="white" strokeWidth="1.5" />
+          <ellipse cx="30" cy="35" rx="25" ry="10" stroke="white" strokeWidth="1" strokeDasharray="4 3" />
+        </svg>
+      </>
+    ),
+  },
+  {
+    title: "Web3 & AI",
+    smoke: "smoke-gradient-5",
+    skills: ["Mesh JS", "Blockchain", "CrewAI", "AI Agents", "Smart Contracts", "MCP"],
+    doodle: (
+      <>
+        {/* Blockchain chain */}
+        <svg className="absolute right-6 top-6 opacity-[0.07]" width="120" height="50" viewBox="0 0 120 50" fill="none">
+          <rect x="2" y="10" width="28" height="28" rx="6" stroke="white" strokeWidth="1.5" />
+          <rect x="46" y="10" width="28" height="28" rx="6" stroke="white" strokeWidth="1.5" />
+          <rect x="90" y="10" width="28" height="28" rx="6" stroke="white" strokeWidth="1.5" />
+          <line x1="30" y1="24" x2="46" y2="24" stroke="white" strokeWidth="1.5" />
+          <line x1="74" y1="24" x2="90" y2="24" stroke="white" strokeWidth="1.5" />
+        </svg>
+        {/* Neural network */}
+        <svg className="skill-pulse absolute bottom-6 right-8 opacity-[0.06]" width="100" height="80" viewBox="0 0 100 80" fill="none">
+          <circle cx="15" cy="15" r="6" stroke="white" strokeWidth="1" />
+          <circle cx="15" cy="40" r="6" stroke="white" strokeWidth="1" />
+          <circle cx="15" cy="65" r="6" stroke="white" strokeWidth="1" />
+          <circle cx="50" cy="25" r="6" stroke="white" strokeWidth="1" />
+          <circle cx="50" cy="55" r="6" stroke="white" strokeWidth="1" />
+          <circle cx="85" cy="40" r="6" stroke="white" strokeWidth="1" />
+          <line x1="21" y1="15" x2="44" y2="25" stroke="white" strokeWidth="0.5" />
+          <line x1="21" y1="15" x2="44" y2="55" stroke="white" strokeWidth="0.5" />
+          <line x1="21" y1="40" x2="44" y2="25" stroke="white" strokeWidth="0.5" />
+          <line x1="21" y1="40" x2="44" y2="55" stroke="white" strokeWidth="0.5" />
+          <line x1="21" y1="65" x2="44" y2="25" stroke="white" strokeWidth="0.5" />
+          <line x1="21" y1="65" x2="44" y2="55" stroke="white" strokeWidth="0.5" />
+          <line x1="56" y1="25" x2="79" y2="40" stroke="white" strokeWidth="0.5" />
+          <line x1="56" y1="55" x2="79" y2="40" stroke="white" strokeWidth="0.5" />
+        </svg>
+      </>
+    ),
+  },
+  {
+    title: "Tools",
+    smoke: "smoke-gradient-2",
+    skills: ["Git", "Vercel", "VS Code", "Zustand", "Redux", "Swagger", "Lenis", "GSAP", "Zapier"],
+    doodle: (
+      <>
+        {/* Terminal window */}
+        <svg className="absolute right-6 top-6 opacity-[0.07]" width="110" height="80" viewBox="0 0 110 80" fill="none">
+          <rect x="1" y="1" width="108" height="78" rx="8" stroke="white" strokeWidth="1.5" />
+          <line x1="1" y1="18" x2="109" y2="18" stroke="white" strokeWidth="1" />
+          <circle cx="12" cy="10" r="3" stroke="white" strokeWidth="1" />
+          <circle cx="22" cy="10" r="3" stroke="white" strokeWidth="1" />
+          <circle cx="32" cy="10" r="3" stroke="white" strokeWidth="1" />
+          <path d="M15 30 L28 40 L15 50" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+          <line x1="34" y1="50" x2="60" y2="50" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+        {/* Git branch */}
+        <svg className="skill-float absolute bottom-8 right-10 opacity-[0.06]" width="70" height="80" viewBox="0 0 70 80" fill="none">
+          <circle cx="20" cy="12" r="6" stroke="white" strokeWidth="1.5" />
+          <circle cx="20" cy="68" r="6" stroke="white" strokeWidth="1.5" />
+          <circle cx="50" cy="40" r="6" stroke="white" strokeWidth="1.5" />
+          <line x1="20" y1="18" x2="20" y2="62" stroke="white" strokeWidth="1.5" />
+          <path d="M20 30 Q20 40, 44 40" stroke="white" strokeWidth="1.5" fill="none" />
+        </svg>
+      </>
+    ),
+  },
+];
 
 const Skills = () => {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-    exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
-  };
-
   return (
-    <Element name="skills" id="skills" className="bg-[] py-24">
-      <AnimatePresence>
-        <div className="px-[4%] sm:px-[6%] ">
-          {/* <motion.div
-            {...ANIMATION_CONFIG}
-            className="font-thunder-semibold text-4xl tracking-wider md:text-6xl"
-          >
-            My <span className="uppercase text-blue">Tech skills</span>
-          </motion.div> */}
-
-          <div className="flex w-full items-end justify-between">
-            <div className="">
-              <div
-                className="mb-3 flex w-fit items-center gap-1 justify-self-start rounded-[14px] border border-black/30 bg-[#462916] px-3 py-0.5 pt-1 text-sm text-[#fff5f4]"
-                h-auto
-              >
-                Skills
-              </div>
-
-              <AnimatePresence mode="wait">
-                <div>
-                  <motion.h1
-                    key={"title_work"}
-                    variants={fadeUp}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    className="max-w-[700px] text-left font-cinzel text-5xl font-medium capitalize"
-                  >
-                    Behind the Code
-                  </motion.h1>
-                 
-                </div>
-              </AnimatePresence>
-            </div>
-
-            <motion.div className="mb-1 flex h-full max-w-[700px] items-center gap-8 font-comfortaa font-normal leading-snug">
-              <AnimatePresence mode="wait">
-                <motion.p
-                  key="anything"
-                  variants={fadeUp}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  className="text-left font-comfortaa text-base font-light leading-snug tracking-wider"
-                >
-                  I’ve built a versatile skill set that bridges design and
-                  development. Working with Next.js, React, and TypeScript, I
-                  focus on crafting fast, scalable web applications with refined
-                  UI and reliable performance.
-                </motion.p>
-              </AnimatePresence>
-            </motion.div>
-          </div>
-
-          <div className="relative mt-8 flex h-full w-full items-center justify-center">
-            <div className="absolute bottom-0 left-[2vw] right-[2vw] top-0 md:left-[2vh] md:right-[2vh]">
-              {/* top left */}
-              <div
-                className={`absolute left-0 top-0 h-[2px] w-3 rounded-full bg-black/60`}
-              />
-              <div
-                className={`absolute left-0 top-0 h-3 w-[2px] rounded-full bg-black/60`}
-              />
-              {/* top right */}
-              <div
-                className={`absolute right-0 top-0 h-[2px] w-3 rounded-full bg-black/60`}
-              />
-              <div
-                className={`absolute right-0 top-0 h-3 w-[2px] rounded-full bg-black/60`}
-              />
-              {/* bottom right */}
-              <div
-                className={`absolute bottom-0 right-0 h-[2px] w-3 rounded-full bg-black/60`}
-              />
-              <div
-                className={`absolute bottom-0 right-0 h-3 w-[2px] rounded-full bg-black/60`}
-              />
-              {/* bottom left */}
-              <div
-                className={`absolute bottom-0 left-0 h-[2px] w-3 rounded-full bg-black/60`}
-              />
-              <div
-                className={`absolute bottom-0 left-0 h-3 w-[2px] rounded-full bg-black/60`}
-              />
-            </div>
-            <div className="relative top-[2vw] flex w-full justify-between py-8 md:top-auto">
-              <div className="hide-scroll grid h-full w-full grid-flow-row grid-cols-3 justify-between gap-y-12 sm:grid-cols-6 sm:gap-y-20">
-                {SKILLSIMAGEPROPS.map((img, id) => (
-                  <motion.div
-                    initial={{ y: 30, scale: 0.8, opacity: 0 }}
-                    whileInView={{ y: 0, scale: 1, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: 0.04 * id }}
-                    className="flex flex-col items-center gap-2"
-                    key={id}
-                  >
-                    <Image
-                      src={img.src}
-                      alt={img.name}
-                      width={1000}
-                      height={1000}
-                      onDragStart={(e) => e.preventDefault()}
-                      className="h-[40px] w-[40px] object-contain transition-none delay-0 duration-0 md:h-[60px] md:w-[60px]"
-                    />
-                    <span className="text-nowrap text-[10px] md:text-base ">
-                      {img.name}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
+    <Element name="skills" id="skills">
+      <section className="bg-primary px-4 py-16 md:px-16 md:py-28 lg:px-24">
+        <div className="mb-10 md:mb-16">
+          <h2 className="font-thunder-extrabold text-4xl uppercase tracking-wide text-white md:text-7xl lg:text-8xl">
+            Skills &
+            <br />
+            Technologies
+          </h2>
         </div>
-      </AnimatePresence>
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {SKILL_GROUPS.map((group) => (
+            <div
+              key={group.title}
+              className={`${group.smoke} relative overflow-hidden rounded-2xl p-5 md:p-10`}
+            >
+              <div className="absolute inset-0 bg-black/40" />
+
+              {/* Doodles */}
+              {group.doodle}
+
+              {/* Grid pattern */}
+              <div className="pointer-events-none absolute inset-0 opacity-[0.03]" style={{
+                backgroundImage: "linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)",
+                backgroundSize: "40px 40px"
+              }} />
+
+              <div className="relative z-10">
+                <h3 className="mb-6 font-thunder-bold text-3xl uppercase tracking-wider text-white md:text-4xl">
+                  {group.title}
+                </h3>
+                <div className="flex flex-wrap gap-2.5">
+                  {group.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-full border border-white/20 bg-black/30 px-4 py-2 font-helvetica-light text-[11px] uppercase tracking-[0.15em] text-white/90 backdrop-blur-sm transition-colors hover:border-white/40 hover:text-white"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </Element>
   );
 };

@@ -1,98 +1,80 @@
-import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import useIsMobile from "~/hooks/useIsMobile";
+
+const NAV_LINKS = [
+  { to: "hero", label: "Home" },
+  { to: "about", label: "About" },
+  { to: "works", label: "Works" },
+  { to: "skills", label: "Skills" },
+];
 
 const Navbar: React.FC = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
   return (
-    <div className="fixed left-0 right-0 top-3 z-[9999] w-full p-1 px-4 md:px-8 ">
-      <div className="flex h-full items-center justify-center justify-self-center rounded-xl p-5 py-3.5 font-helvetica-light capitalize tracking-widest  text-tertiary backdrop-blur-lg md:px-6">
-        <div className="flex items-center gap-2.5 text-sm sm:gap-2 md:gap-8 md:text-base font-comfortaa tracking-[0.0005em] font-semibold text-black">
-          <Links />
+    <>
+      <nav className="fixed left-0 right-0 top-0 z-[9999] flex items-center justify-between px-6 py-5 md:px-12">
+        {pathname === "/projects" ? (
+          <Link
+            href="/"
+            className="flex cursor-pointer items-center gap-2 font-helvetica-light text-xs uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-70"
+          >
+            <span>&larr;</span>
+            <span>Home</span>
+          </Link>
+        ) : (
+          <ScrollLink
+            to="hero"
+            href="/"
+            smooth={true}
+            duration={500}
+            className="flex cursor-pointer items-center gap-2 font-helvetica-light text-xs uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-70"
+          >
+            <span>&larr;</span>
+            <span>Home</span>
+          </ScrollLink>
+        )}
+
+        <div className="flex items-center gap-4">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="flex flex-col gap-1.5 p-1"
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block h-px w-6 bg-white transition-all duration-300 ${menuOpen ? "translate-y-[3.5px] rotate-45" : ""}`}
+            />
+            <span
+              className={`block h-px w-6 bg-white transition-all duration-300 ${menuOpen ? "-translate-y-[3.5px] -rotate-45" : ""}`}
+            />
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile menu overlay */}
+      <div
+        className={`fixed inset-0 z-[9998] flex items-center justify-center bg-black/95 backdrop-blur-sm transition-all duration-500 ${menuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}
+      >
+        <div className="flex flex-col items-center gap-8">
+          {NAV_LINKS.map((link) => (
+            <ScrollLink
+              key={link.to}
+              to={link.to}
+              smooth={true}
+              duration={500}
+              offset={-20}
+              onClick={() => setMenuOpen(false)}
+              className="cursor-pointer font-thunder-bold text-5xl uppercase tracking-wider text-white transition-colors duration-300 hover:text-accent-purple md:text-7xl"
+            >
+              {link.label}
+            </ScrollLink>
+          ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
 export default Navbar;
-
-const Links = () => {
-  const isMobile = useIsMobile();
-  const [isAtBottom, setIsAtBottom] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      const isBottom =
-        window.innerHeight + window.scrollY >= document.body.offsetHeight - 300;
-      setIsAtBottom(isBottom);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  return (
-    <>
-      <ScrollLink
-        activeClass="hero"
-        activeStyle={{ color: "#462916" }}
-        to="hero"
-        spy={true}
-        smooth={true}
-        offset={-225}
-        duration={500}
-        className="cursor-pointer transition-colors duration-300 hover:text-[#462916]"
-      >
-        Home
-      </ScrollLink>
-      <ScrollLink
-        activeClass="about"
-        activeStyle={{ color: "#462916" }}
-        to="about"
-        spy={true}
-        smooth={true}
-        offset={-75}
-        duration={500}
-        className="cursor-pointer transition-colors duration-300 hover:text-[#462916]"
-      >
-        About
-      </ScrollLink>
-
-      <ScrollLink
-        activeClass="works"
-        activeStyle={{ color: "#462916" }}
-        to="works"
-        spy={true}
-        smooth={true}
-        offset={-75}
-        duration={500}
-        className="cursor-pointer transition-colors duration-300 hover:text-[#462916]"
-      >
-        Works
-      </ScrollLink>
-      <ScrollLink
-        activeClass="skills"
-        activeStyle={{ color: "#462916" }}
-        to="skills"
-        spy={!isAtBottom}
-        smooth={true}
-        offset={-75}
-        spyThrottle={700}
-        duration={500}
-        className="cursor-pointer transition-colors duration-300 hover:text-[#462916]"
-      >
-        Skills
-      </ScrollLink>
-      <ScrollLink
-        activeClass="connect"
-        activeStyle={{ color: "#462916" }}
-        to="connect"
-        spy={true}
-        smooth={true}
-        offset={isMobile ? -520 : -280}
-        duration={500}
-        className="cursor-pointer transition-colors duration-300 hover:text-[#462916]"
-      >
-        Connect
-      </ScrollLink>
-    </>
-  );
-};
