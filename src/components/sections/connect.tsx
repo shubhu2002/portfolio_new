@@ -1,6 +1,6 @@
 import { FiArrowUpRight } from "react-icons/fi";
 
-const ProjectNav = () => {
+const Connect = () => {
   return (
     <section className="bg-primary px-4 py-16 md:px-16 md:py-24 lg:px-24">
       <div className="flex flex-col items-center justify-center gap-6">
@@ -26,4 +26,4 @@ const ProjectNav = () => {
   );
 };
 
-export default ProjectNav;
+export default Connect;
