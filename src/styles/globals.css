@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @import './custom-scrollbar.css';
-@import './lenis-scroll.css';
 @import './fonts.css';
 
 body {
@@ -13,6 +12,7 @@ body {
   font-weight: 500;
   background: #000000;
   color: #ffffff;
+  scroll-behavior: smooth;
 }
 
 ::selection {

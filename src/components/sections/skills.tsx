@@ -1,5 +1,3 @@
-import { Element } from "react-scroll";
-
 const SKILL_GROUPS = [
   {
     title: "Frontend",
@@ -123,8 +121,7 @@ const SKILL_GROUPS = [
 
 const Skills = () => {
   return (
-    <Element name="skills" id="skills">
-      <section className="bg-primary px-4 py-16 md:px-16 md:py-28 lg:px-24">
+      <section id="skills" className="bg-primary px-4 py-16 md:px-16 md:py-28 lg:px-24">
         <div className="mb-10 md:mb-16">
           <h2 className="font-thunder-extrabold text-4xl uppercase tracking-wide text-white md:text-7xl lg:text-8xl">
             Skills &
@@ -169,7 +166,6 @@ const Skills = () => {
           ))}
         </div>
       </section>
-    </Element>
   );
 };
 

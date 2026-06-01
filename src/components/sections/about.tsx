@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Element } from "react-scroll";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const metadata = [
@@ -12,8 +11,7 @@ const metadata = [
 
 const About = () => {
   return (
-    <Element name="about" id="about">
-      <section className="relative bg-primary px-4 py-16 md:px-16 md:py-28 lg:px-24">
+      <section id="about" className="relative bg-primary px-4 py-16 md:px-16 md:py-28 lg:px-24">
         <div className="mb-10 flex items-end justify-between md:mb-16">
           <h2 className="font-thunder-extrabold text-4xl uppercase tracking-wide text-white md:text-7xl lg:text-8xl">
             About Me
@@ -112,7 +110,6 @@ const About = () => {
           </div>
         </div>
       </section>
-    </Element>
   );
 };
 

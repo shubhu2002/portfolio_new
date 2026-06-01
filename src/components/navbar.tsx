@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Link as ScrollLink } from "react-scroll";
 
 const NAV_LINKS = [
   { to: "hero", label: "Home" },
@@ -13,6 +12,12 @@ const NAV_LINKS = [
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  const scrollTo = (id: string) => {
+    setMenuOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <nav className="fixed left-0 right-0 top-0 z-[9999] flex items-center justify-between px-6 py-5 md:px-12">
@@ -25,16 +30,13 @@ const Navbar: React.FC = () => {
             <span>Home</span>
           </Link>
         ) : (
-          <ScrollLink
-            to="hero"
-            href="/"
-            smooth={true}
-            duration={500}
+          <button
+            onClick={() => scrollTo("hero")}
             className="flex cursor-pointer items-center gap-2 font-helvetica-light text-xs uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-70"
           >
             <span>&larr;</span>
             <span>Home</span>
-          </ScrollLink>
+          </button>
         )}
 
         <div className="flex items-center gap-4">
@@ -59,17 +61,13 @@ const Navbar: React.FC = () => {
       >
         <div className="flex flex-col items-center gap-8">
           {NAV_LINKS.map((link) => (
-            <ScrollLink
+            <button
               key={link.to}
-              to={link.to}
-              smooth={true}
-              duration={500}
-              offset={-20}
-              onClick={() => setMenuOpen(false)}
+              onClick={() => scrollTo(link.to)}
               className="cursor-pointer font-thunder-bold text-5xl uppercase tracking-wider text-white transition-colors duration-300 hover:text-accent-purple md:text-7xl"
             >
               {link.label}
-            </ScrollLink>
+            </button>
           ))}
         </div>
       </div>

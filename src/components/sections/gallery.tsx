@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Element } from "react-scroll";
 import { PROJECTS } from "~/data";
 import { FiArrowUpRight, FiGithub } from "react-icons/fi";
 import useIsMobile from "~/hooks/useIsMobile";
@@ -17,8 +16,7 @@ const Gallery = () => {
   const p6 = getProject(14);
 
   return (
-    <Element name="works" id="works">
-      <section className="bg-primary px-4 py-16 md:px-16 md:py-28 lg:px-24">
+      <section id="works" className="bg-primary px-4 py-16 md:px-16 md:py-28 lg:px-24">
         <div className="mb-10 flex items-end justify-between md:mb-16">
           <h2 className="font-thunder-extrabold text-4xl uppercase tracking-wide text-white md:text-7xl lg:text-8xl">
             Selected
@@ -39,7 +37,7 @@ const Gallery = () => {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-5">
             <div className="md:col-span-3">
               {p1 && (
-                <ProjectCard project={p1} className="h-full" aspectClass="" />
+                <ProjectCard project={p1} className="h-full" aspectClass="" priority />
               )}
             </div>
             <div className="flex flex-col gap-6 md:col-span-2">
@@ -72,7 +70,6 @@ const Gallery = () => {
           </div>
         </div>
       </section>
-    </Element>
   );
 };
 
@@ -80,12 +77,14 @@ interface ProjectCardProps {
   project: (typeof PROJECTS)[number];
   className?: string;
   aspectClass?: string;
+  priority?: boolean;
 }
 
 const ProjectCard = ({
   project,
   className = "",
   aspectClass = "aspect-[4/3]",
+  priority = false,
 }: ProjectCardProps) => {
   const imgSrc = project.image;
 
@@ -98,6 +97,8 @@ const ProjectCard = ({
           src={imgSrc}
           alt={project.heading}
           fill
+          priority={priority}
+          loading={priority ? "eager" : "lazy"}
           className="object-cover transition-transform duration-700 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, 60vw"
         />
@@ -106,17 +107,6 @@ const ProjectCard = ({
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/10 transition-opacity duration-500 group-hover:from-black/95" />
 
       <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-        {/* <div className="flex flex-wrap gap-2">
-          {project.tech_used.slice(0, 4).map((tech) => (
-            <span
-              key={tech}
-              className="rounded-full border border-white/20 bg-black/40 px-3 py-1 font-helvetica-light text-[10px] uppercase tracking-[0.15em] text-white/80 backdrop-blur-md"
-            >
-              {tech}
-            </span>
-          ))}
-        </div> */}
-
         <div>
           <h3 className="mb-1 font-thunder-bold text-2xl uppercase tracking-wide text-white md:text-3xl">
             {project.heading}

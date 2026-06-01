@@ -1,4 +1,3 @@
-import { Link as ScrollLink } from "react-scroll";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const SOCIAL_LINKS = [
@@ -9,6 +8,10 @@ const SOCIAL_LINKS = [
 ];
 
 const Footer = () => {
+  const scrollToTop = () => {
+    document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <footer className="border-t border-white/10 bg-primary px-4 py-6 md:px-16 lg:px-24">
       <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
@@ -31,10 +34,8 @@ const Footer = () => {
           ))}
         </div>
 
-        <ScrollLink
-          to="hero"
-          smooth={true}
-          duration={800}
+        <button
+          onClick={scrollToTop}
           className="cursor-pointer rounded-full border border-white/20 p-2 transition-colors duration-300 hover:border-white/50"
         >
           <svg
@@ -48,7 +49,7 @@ const Footer = () => {
           >
             <path d="M12 19V5M5 12l7-7 7 7" />
           </svg>
-        </ScrollLink>
+        </button>
       </div>
     </footer>
   );
