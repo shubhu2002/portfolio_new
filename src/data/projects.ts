@@ -222,15 +222,24 @@ export const PROJECTS: ProjectProps[] = [
   {
     id: 14,
     image:
-      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/indiacodex.png",
-    heading: "IndiaCodex 2026",
-    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fcardano-codex.mp4?alt=media&token=19dc2772-2f11-469b-b092-ffe6cd0b6318",
-    link: "https://indiacodex.com/",
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/regretify.png",
+    heading: "Regretify : Track Your Regrets",
+    src: "",
+    link: "https://regretify-app.vercel.app/",
     description:
-      "A digital hackathon powered by Cardano & moderated by Nucast Labs to increase awareness, engage web3 developers, and promote Cardano in India.",
+      "Regretify is a fun expense tracker that helps you see exactly how much money you regret spending. Log your regrets, track your impulse buys, and maybe — just maybe — spend smarter.",
     github_link: "",
-    tech_used: ["Next JS", "Typecript", "GSAP", "Framer Motion"],
-    category: ["all", "nucast"],
+    tech_used: [
+      "Next JS",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+      "NextAuth",
+      "React Query",
+      "Chart.js",
+      "Zustand",
+    ],
+    category: ["all", "personal"],
   },
   {
     id: 15,
