@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('custom-scrollbar.css');
-@import url('lenis-scroll.css');
-@import url('fonts.css');
+@import './custom-scrollbar.css';
+@import './lenis-scroll.css';
+@import './fonts.css';
 
 body {
   margin: 0;
@@ -71,13 +71,11 @@ body {
 }
 
 .hero-fade-in {
-  animation: heroFadeIn 0.8s ease-out 0.3s forwards;
-  opacity: 0;
+  animation: heroFadeIn 0.6s ease-out forwards;
 }
 
 .hero-title {
-  animation: heroFadeIn 1s ease-out 0.1s forwards;
-  opacity: 0;
+  animation: heroFadeIn 0.7s ease-out forwards;
 }
 
 @keyframes orbFloat1 {

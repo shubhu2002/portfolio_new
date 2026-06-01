@@ -43,6 +43,10 @@ const Layout = ({
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
+
+        <link rel="preload" href="/fonts/thunder/Thunder-ExtraBoldLC_800.otf" as="font" type="font/otf" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/helvetica/HelveticaNeue-Light.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/neue-machina/PPNeueMachina-PlainLight.otf" as="font" type="font/otf" crossOrigin="anonymous" />
       </Head>
       <main className="relative min-h-screen w-full bg-primary text-secondary font-neue-light tracking-wider">
         <Navbar />
