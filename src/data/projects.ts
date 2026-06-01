@@ -228,7 +228,7 @@ export const PROJECTS: ProjectProps[] = [
     link: "https://regretify-app.vercel.app/",
     description:
       "Regretify is a fun expense tracker that helps you see exactly how much money you regret spending. Log your regrets, track your impulse buys, and maybe — just maybe — spend smarter.",
-    github_link: "",
+    github_link: "https://github.com/shubhu2002/regretify-app",
     tech_used: [
       "Next JS",
       "TypeScript",
