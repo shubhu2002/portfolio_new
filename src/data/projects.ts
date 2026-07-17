@@ -131,20 +131,18 @@ export const PROJECTS: ProjectProps[] = [
   {
     id: 9,
     image:
-      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/nu_livestream.png",
-    heading: "Livestream | Nucast",
-    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Flive_nucast.mp4?alt=media&token=1090dbf1-51c6-41c0-b7fa-6c61a46b64ed",
-    link: "https://live.nucast.io/",
-    description:
-      "Build the future of Interactive Entertainment . It is a state of art livestreaming protocol that is set to change the content creation game with features that include Live Predictions with wins from a collective ADA pool. Vibrant chat rooms for engaging discussions. Simple micropayments to tip your favorite creators. A platform free from censorship",
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/crypto_rwa.png",
+    heading: "Crypto Dashborad",
+    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Frwa.mp4?alt=media&token=2f669ffb-1846-4503-8764-2ffc9bf87995",
+    link: "https://rwa-lending-app-ts.vercel.app/deal/1",
+    description: "Become an investor in the crypto space.",
     github_link: "",
     tech_used: [
       "Next JS",
       "Typescript",
-      "Supabase",
+      "Chart.js",
+      "Crypto",
       "Mesh JS (Blockchain)",
-      "Express JS",
-      "Mux Player",
     ],
     category: ["all", "nucast"],
   },
@@ -202,6 +200,26 @@ export const PROJECTS: ProjectProps[] = [
   {
     id: 13,
     image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/nu_nuauth.png",
+    heading: "NuAuth",
+    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2FNu-Auth.mp4?alt=media&token=0e0bb0f3-473a-4c2a-aa49-1de70f1a2ce6",
+    link: "https://nuauth.nucast.io/",
+    description: "Authenticate, Secure and Monetize Your Content",
+    github_link: "",
+    tech_used: [
+      "Next JS",
+      "Typescript",
+      "Python",
+      "Mesh JS (Blockchain)",
+      "Chat AI",
+      "Masumi",
+      "Supabase",
+    ],
+    category: ["all", "nucast"],
+  },
+  {
+    id: 14,
+    image:
       "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/staging_syncai.png",
     heading: "Sync AI Network",
     src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fsync_staging.mp4?alt=media&token=46b17662-a535-4dc6-8dd8-24b2c0d09536",
@@ -218,28 +236,6 @@ export const PROJECTS: ProjectProps[] = [
       "Three JS",
     ],
     category: ["all", "nucast"],
-  },
-  {
-    id: 14,
-    image:
-      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/regretify.png",
-    heading: "Regretify : Track Your Regrets",
-    src: "",
-    link: "https://regretify-app.vercel.app/",
-    description:
-      "Regretify is a fun expense tracker that helps you see exactly how much money you regret spending. Log your regrets, track your impulse buys, and maybe — just maybe — spend smarter.",
-    github_link: "https://github.com/shubhu2002/regretify-app",
-    tech_used: [
-      "Next JS",
-      "TypeScript",
-      "Tailwind CSS",
-      "Supabase",
-      "NextAuth",
-      "React Query",
-      "Chart.js",
-      "Zustand",
-    ],
-    category: ["all", "personal"],
   },
   {
     id: 15,
@@ -276,6 +272,26 @@ export const PROJECTS: ProjectProps[] = [
   {
     id: 17,
     image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/nu_livestream.png",
+    heading: "Livestream | Nucast",
+    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Flive_nucast.mp4?alt=media&token=1090dbf1-51c6-41c0-b7fa-6c61a46b64ed",
+    link: "https://live.nucast.io/",
+    description:
+      "Build the future of Interactive Entertainment . It is a state of art livestreaming protocol that is set to change the content creation game with features that include Live Predictions with wins from a collective ADA pool. Vibrant chat rooms for engaging discussions. Simple micropayments to tip your favorite creators. A platform free from censorship",
+    github_link: "",
+    tech_used: [
+      "Next JS",
+      "Typescript",
+      "Supabase",
+      "Mesh JS (Blockchain)",
+      "Express JS",
+      "Mux Player",
+    ],
+    category: ["all", "nucast"],
+  },
+  {
+    id: 18,
+    image:
       "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/sova.png",
     heading: "Sova Lounge Da Nang",
     src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fsova.mp4?alt=media&token=dc29abda-ead3-41a2-a346-166a78fc9ccf",
@@ -293,45 +309,7 @@ export const PROJECTS: ProjectProps[] = [
     category: ["all", "nucast"],
   },
   {
-    id: 18,
-    image:
-      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/nu_nuauth.png",
-    heading: "NuAuth",
-    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2FNu-Auth.mp4?alt=media&token=0e0bb0f3-473a-4c2a-aa49-1de70f1a2ce6",
-    link: "https://nuauth.nucast.io/",
-    description: "Authenticate, Secure and Monetize Your Content",
-    github_link: "",
-    tech_used: [
-      "Next JS",
-      "Typescript",
-      "Python",
-      "Mesh JS (Blockchain)",
-      "Chat AI",
-      "Masumi",
-      "Supabase",
-    ],
-    category: ["all", "nucast"],
-  },
-  {
     id: 19,
-    image:
-      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/crypto_rwa.png",
-    heading: "Crypto Dashborad",
-    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Frwa.mp4?alt=media&token=2f669ffb-1846-4503-8764-2ffc9bf87995",
-    link: "https://rwa-lending-app-ts.vercel.app/deal/1",
-    description: "Become an investor in the crypto space.",
-    github_link: "",
-    tech_used: [
-      "Next JS",
-      "Typescript",
-      "Chart.js",
-      "Crypto",
-      "Mesh JS (Blockchain)",
-    ],
-    category: ["all", "nucast"],
-  },
-  {
-    id: 20,
     image:
       "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/nu_subscription.png",
     heading: "Nucast | Subscription",
@@ -350,9 +328,62 @@ export const PROJECTS: ProjectProps[] = [
     ],
     category: ["all", "nucast"],
   },
-
+  {
+    id: 20,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/regretify.png",
+    heading: "Regretify : Track Your Regrets",
+    src: "",
+    link: "https://regretify-app.vercel.app/",
+    description:
+      "Regretify is a fun expense tracker that helps you see exactly how much money you regret spending. Log your regrets, track your impulse buys, and maybe — just maybe — spend smarter.",
+    github_link: "https://github.com/shubhu2002/regretify-app",
+    tech_used: [
+      "Next JS",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+      "NextAuth",
+      "React Query",
+      "Chart.js",
+      "Zustand",
+    ],
+    category: ["all", "personal"],
+  },
   {
     id: 21,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/crypto-pulse.png",
+    heading: "CRYPTOPULSE : REAL-TIME CRYPTO PULSE",
+    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Frwa.mp4?alt=media&token=2f669ffb-1846-4503-8764-2ffc9bf87995",
+    link: "https://crypto-pulse-websocket-ten.vercel.app/",
+    description:
+      "A WebSocket learning project that got out of hand — a full real-time crypto dashboard with a Node relay server fanning out Binance ticker streams to every connected client, complete with docs explaining how it all works",
+    github_link: "https://github.com/shubhu2002/crypto-pulse-websocket",
+    tech_used: [
+      "Next JS",
+      "Typescript",
+      "Express",
+      "Websocket (WS)",
+      "Binanace API",
+    ],
+    category: ["all", "personal"],
+  },
+  {
+    id: 22,
+    image:
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/indiacodex.png",
+    heading: "IndiaCodex'26",
+    src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fbetter-web3.mp4?alt=media&token=12a97cb3-5b82-4f4b-947b-937e8d2dbf51",
+    link: "https://www.indiacodex.com/",
+    description:
+      "A digital hackathon powered by Cardano & moderated by Nucast Labs to increase awareness, engage web3 developers, and promote Cardano in India.",
+    github_link: "",
+    tech_used: ["Next JS", "Typescript", "Framer Motion", "GSAP"],
+    category: ["all", "nucast"],
+  },
+  {
+    id: 23,
     image:
       "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/better_web3_light.png",
     heading: "Better Web3",
@@ -374,9 +405,9 @@ export const PROJECTS: ProjectProps[] = [
     category: ["all", "nucast"],
   },
   {
-    id: 22,
+    id: 24,
     image:
-      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/ascend.png",
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/ascend%20(1).png",
     heading: "Ascend | Prediction Markets",
     src: "",
     link: "https://ascend.market",
@@ -384,7 +415,16 @@ export const PROJECTS: ProjectProps[] = [
     description:
       "Trade on prediction markets with leverage. Bet on sports, politics, and more with ZK-settled outcomes.",
     github_link: "",
-    tech_used: ["Next JS", "Typescript", "Mesh JS", "Express JS", "Go", "Deno", "Supabase", "Kafka"],
+    tech_used: [
+      "Next JS",
+      "Typescript",
+      "Mesh JS",
+      "Express JS",
+      "Go",
+      "Deno",
+      "Supabase",
+      "Kafka",
+    ],
     category: ["all", "nucast"],
   },
 ];
