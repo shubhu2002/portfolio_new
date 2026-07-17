@@ -4,7 +4,7 @@ export const PROJECTS: ProjectProps[] = [
   {
     id: 1,
     image:
-      "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/lib_management.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9saWJfbWFuYWdlbWVudC5qcGciLCJpYXQiOjE3NjAxMTgwMDYsImV4cCI6MTc5MTY1NDAwNn0.lj2L6WkyLyTkEnyjlcVHJsdYl7jltyDJUKcY94_DsGs",
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/c++%20image.jpg",
     heading: "Library Management",
     src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2Fc%2B%2B.png?alt=media&token=09a0681f-a030-4d22-9b31-21e53c4bcd64",
     link: "",
@@ -17,7 +17,7 @@ export const PROJECTS: ProjectProps[] = [
   {
     id: 2,
     image:
-      "https://rrbfojudfjqzfcmturcz.supabase.co/storage/v1/object/sign/projects/onSight-Cafe.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yOWJmMjU1Mi1hZjY4LTRjMjctOGRkMy1iYjdiNDdkM2NhOTgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0cy9vblNpZ2h0LUNhZmUuanBnIiwiaWF0IjoxNzYwMTE4MDI1LCJleHAiOjE3OTE2NTQwMjV9.-4sSHntelU7IDTf3Ppi_2yQJ2LiHNhbtHDdvZhQCkr4",
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/onSight.png",
     heading: "OnSight Cafe : A Lovable Food",
     src: "https://firebasestorage.googleapis.com/v0/b/tourice-74347.appspot.com/o/portfolioProjects%2FonSight.png?alt=media&token=bd45dafd-9ef2-4e8e-9e35-262b32ce721b",
     link: "",

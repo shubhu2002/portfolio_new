@@ -8,12 +8,12 @@ const Gallery = () => {
   const isMobile = useIsMobile();
   const getProject = (id: number) => PROJECTS.find((p) => p.id === id);
 
-  const p1 = getProject(22);
-  const p2 = getProject(21);
-  const p3 = getProject(12);
-  const p4 = getProject(20);
+  const p1 = getProject(24);
+  const p2 = getProject(23);
+  const p3 = getProject(17);
+  const p4 = getProject(22);
   const p5 = getProject(8);
-  const p6 = getProject(14);
+  const p6 = getProject(20);
 
   return (
       <section id="works" className="bg-primary px-4 py-16 md:px-16 md:py-28 lg:px-24">
