@@ -1,7 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { memo, useMemo, useCallback, useState } from "react";
-import { FiArrowUpRight, FiGithub, FiArrowLeft } from "react-icons/fi";
+import { memo, useMemo, useCallback, useState, useRef, useEffect } from "react";
+import {
+  FiArrowUpRight,
+  FiGithub,
+  FiArrowLeft,
+  FiChevronDown,
+  FiChevronUp,
+} from "react-icons/fi";
 import { PROJECTS, FILTERS } from "~/data";
 import Layout from "~/layout";
 
@@ -98,6 +104,15 @@ const ProjectsPage = () => {
 
 const ProjectCard = memo(({ project, priority = false }: { project: (typeof PROJECTS)[number]; priority?: boolean }) => {
   const [expanded, setExpanded] = useState(false);
+  const [descExpanded, setDescExpanded] = useState(false);
+  const [isClamped, setIsClamped] = useState(false);
+  const descRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    const el = descRef.current;
+    if (el) setIsClamped(el.scrollHeight > el.clientHeight);
+  }, []);
+
   const imgSrc = project.image;
   const visible = expanded ? project.tech_used : project.tech_used.slice(0, 3);
   const remaining = project.tech_used.length - 3;
@@ -126,9 +141,34 @@ const ProjectCard = memo(({ project, priority = false }: { project: (typeof PROJ
         <h3 className="mb-2 font-thunder-bold text-xl uppercase tracking-wide text-white">
           {project.heading}
         </h3>
-        <p className="mb-4 line-clamp-2 font-helvetica-light text-[11px] leading-relaxed text-white/40">
-          {project.description}
-        </p>
+        <div className="mb-4">
+          <p
+            ref={descRef}
+            className={`font-helvetica-light text-[11px] leading-relaxed text-white/60 ${
+              descExpanded ? "" : "line-clamp-2"
+            }`}
+          >
+            {project.description}
+          </p>
+          {isClamped && (
+            <button
+              onClick={() => setDescExpanded((prev) => !prev)}
+              className="mt-1.5 flex items-center gap-1 font-helvetica-light text-[9px] uppercase tracking-[0.15em] text-white/40 transition-colors hover:text-white/70"
+            >
+              {descExpanded ? (
+                <>
+                  Show less
+                  <FiChevronUp className="text-[10px]" />
+                </>
+              ) : (
+                <>
+                  Read more
+                  <FiChevronDown className="text-[10px]" />
+                </>
+              )}
+            </button>
+          )}
+        </div>
 
         {/* Tech pills */}
         <div className="mb-4 flex flex-wrap gap-1.5">
