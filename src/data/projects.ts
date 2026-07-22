@@ -331,7 +331,7 @@ export const PROJECTS: ProjectProps[] = [
   {
     id: 20,
     image:
-      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/regretify.png",
+      "https://qniqjhhdtnjercjspgst.supabase.co/storage/v1/object/public/project_images/regretify-new.png",
     heading: "Regretify : Track Your Regrets",
     src: "",
     link: "https://regretify-app.vercel.app/",
