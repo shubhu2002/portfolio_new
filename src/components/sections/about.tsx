@@ -17,7 +17,7 @@ const About = () => {
             About Me
           </h2>
           <a
-            href="https://drive.google.com/file/d/1aob5c30w7epk3-gYsDg5n7nGYdhgdgU4/view?usp=sharing"
+            href="https://drive.google.com/file/d/1vtJ1UGHNmcbdTPvGWgYGn_Pqs4rtnI3p/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-2 font-helvetica-light text-[11px] uppercase tracking-[0.2em] text-muted transition-colors hover:text-white md:text-sm"
